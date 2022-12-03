@@ -345,11 +345,22 @@
     "query": {
       "track_total_hits": false,
       "sort": [
-        { "@timestamp": { "order": "desc", "unmapped_type": "boolean" } }
+        {
+          "@timestamp": {
+            "order": "desc",
+            "unmapped_type": "boolean"
+          }
+        }
       ],
       "fields": [
-        { "field": "*", "include_unmapped": "true" },
-        { "field": "@timestamp", "format": "strict_date_optional_time" },
+        {
+          "field": "*",
+          "include_unmapped": "true"
+        },
+        {
+          "field": "@timestamp",
+          "format": "strict_date_optional_time"
+        },
         {
           "field": "code_signature.timestamp",
           "format": "strict_date_optional_time"
@@ -358,23 +369,50 @@
           "field": "dll.code_signature.timestamp",
           "format": "strict_date_optional_time"
         },
-        { "field": "elf.creation_date", "format": "strict_date_optional_time" },
-        { "field": "event.created", "format": "strict_date_optional_time" },
-        { "field": "event.end", "format": "strict_date_optional_time" },
-        { "field": "event.ingested", "format": "strict_date_optional_time" },
-        { "field": "event.start", "format": "strict_date_optional_time" },
-        { "field": "file.accessed", "format": "strict_date_optional_time" },
+        {
+          "field": "elf.creation_date",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "event.created",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "event.end",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "event.ingested",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "event.start",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "file.accessed",
+          "format": "strict_date_optional_time"
+        },
         {
           "field": "file.code_signature.timestamp",
           "format": "strict_date_optional_time"
         },
-        { "field": "file.created", "format": "strict_date_optional_time" },
-        { "field": "file.ctime", "format": "strict_date_optional_time" },
+        {
+          "field": "file.created",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "file.ctime",
+          "format": "strict_date_optional_time"
+        },
         {
           "field": "file.elf.creation_date",
           "format": "strict_date_optional_time"
         },
-        { "field": "file.mtime", "format": "strict_date_optional_time" },
+        {
+          "field": "file.mtime",
+          "format": "strict_date_optional_time"
+        },
         {
           "field": "file.x509.not_after",
           "format": "strict_date_optional_time"
@@ -383,7 +421,10 @@
           "field": "file.x509.not_before",
           "format": "strict_date_optional_time"
         },
-        { "field": "package.installed", "format": "strict_date_optional_time" },
+        {
+          "field": "package.installed",
+          "format": "strict_date_optional_time"
+        },
         {
           "field": "process.code_signature.timestamp",
           "format": "strict_date_optional_time"
@@ -392,7 +433,10 @@
           "field": "process.elf.creation_date",
           "format": "strict_date_optional_time"
         },
-        { "field": "process.end", "format": "strict_date_optional_time" },
+        {
+          "field": "process.end",
+          "format": "strict_date_optional_time"
+        },
         {
           "field": "process.parent.code_signature.timestamp",
           "format": "strict_date_optional_time"
@@ -409,7 +453,10 @@
           "field": "process.parent.start",
           "format": "strict_date_optional_time"
         },
-        { "field": "process.start", "format": "strict_date_optional_time" },
+        {
+          "field": "process.start",
+          "format": "strict_date_optional_time"
+        },
         {
           "field": "threat.enrichments.indicator.file.accessed",
           "format": "strict_date_optional_time"
@@ -550,13 +597,21 @@
           "field": "winlog.time_created",
           "format": "strict_date_optional_time"
         },
-        { "field": "x509.not_after", "format": "strict_date_optional_time" },
-        { "field": "x509.not_before", "format": "strict_date_optional_time" }
+        {
+          "field": "x509.not_after",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "x509.not_before",
+          "format": "strict_date_optional_time"
+        }
       ],
       "size": 1000,
       "version": true,
       "script_fields": {},
-      "stored_fields": ["*"],
+      "stored_fields": [
+        "*"
+      ],
       "runtime_mappings": {},
       "_source": false,
       "query": {
@@ -615,8 +670,8 @@
               "range": {
                 "@timestamp": {
                   "format": "strict_date_optional_time",
-                  "gte": "2022-12-01T17:37:05.000Z",
-                  "lte": "2022-12-01T17:39:41.000Z"
+                  "gte": "2022-12-02T20:06:12.497Z",
+                  "lte": "2022-12-03T06:06:12.497Z"
                 }
               }
             }
@@ -628,16 +683,30 @@
                 "minimum_should_match": 1,
                 "should": [
                   {
-                    "match_phrase": { "message": "FormNhapCauHoiPAKNV2.aspx" }
+                    "match_phrase": {
+                      "message": "FormNhapCauHoiPAKNV2.aspx"
+                    }
                   },
-                  { "match_phrase": { "message": "/Pages/Login.aspx" } },
+                  {
+                    "match_phrase": {
+                      "message": "/Pages/Login.aspx"
+                    }
+                  },
                   {
                     "match_phrase": {
                       "message": "/hActionVanBanVBQPPL2013.ashx"
                     }
                   },
-                  { "match_phrase": { "message": "Pages/Default1.aspx" } },
-                  { "match_phrase": { "message": "/owa/plt1.ashx" } },
+                  {
+                    "match_phrase": {
+                      "message": "Pages/Default1.aspx"
+                    }
+                  },
+                  {
+                    "match_phrase": {
+                      "message": "/owa/plt1.ashx"
+                    }
+                  },
                   {
                     "match_phrase": {
                       "message": "/HoatDongQLNN/Pages/Default1.asp"
@@ -650,9 +719,15 @@
         }
       },
       "highlight": {
-        "pre_tags": ["@kibana-highlighted-field@"],
-        "post_tags": ["@/kibana-highlighted-field@"],
-        "fields": { "*": {} },
+        "pre_tags": [
+          "@kibana-highlighted-field@"
+        ],
+        "post_tags": [
+          "@/kibana-highlighted-field@"
+        ],
+        "fields": {
+          "*": {}
+        },
         "fragment_size": 2147483647
       }
     }
@@ -663,139 +738,277 @@
     "last_gte": "",
     "last-lte": "",
     "query": {
-      "aggs": {
-        "0": {
-          "terms": {
-            "field": "host.hostname.keyword",
-            "order": { "_count": "desc" },
-            "size": 10,
-            "shard_size": 25
+      "track_total_hits": false,
+      "sort": [
+        {
+          "@timestamp": {
+            "order": "desc",
+            "unmapped_type": "boolean"
           }
         }
-      },
-      "size": 0,
+      ],
       "fields": [
-        { "field": "@timestamp", "format": "date_time" },
-        { "field": "code_signature.timestamp", "format": "date_time" },
-        { "field": "dll.code_signature.timestamp", "format": "date_time" },
-        { "field": "elf.creation_date", "format": "date_time" },
-        { "field": "event.created", "format": "date_time" },
-        { "field": "event.end", "format": "date_time" },
-        { "field": "event.ingested", "format": "date_time" },
-        { "field": "event.start", "format": "date_time" },
-        { "field": "file.accessed", "format": "date_time" },
-        { "field": "file.code_signature.timestamp", "format": "date_time" },
-        { "field": "file.created", "format": "date_time" },
-        { "field": "file.ctime", "format": "date_time" },
-        { "field": "file.elf.creation_date", "format": "date_time" },
-        { "field": "file.mtime", "format": "date_time" },
-        { "field": "file.x509.not_after", "format": "date_time" },
-        { "field": "file.x509.not_before", "format": "date_time" },
-        { "field": "package.installed", "format": "date_time" },
-        { "field": "process.code_signature.timestamp", "format": "date_time" },
-        { "field": "process.elf.creation_date", "format": "date_time" },
-        { "field": "process.end", "format": "date_time" },
+        {
+          "field": "*",
+          "include_unmapped": "true"
+        },
+        {
+          "field": "@timestamp",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "code_signature.timestamp",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "dll.code_signature.timestamp",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "elf.creation_date",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "event.created",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "event.end",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "event.ingested",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "event.start",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "file.accessed",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "file.code_signature.timestamp",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "file.created",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "file.ctime",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "file.elf.creation_date",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "file.mtime",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "file.x509.not_after",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "file.x509.not_before",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "package.installed",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "process.code_signature.timestamp",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "process.elf.creation_date",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "process.end",
+          "format": "strict_date_optional_time"
+        },
         {
           "field": "process.parent.code_signature.timestamp",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
-        { "field": "process.parent.elf.creation_date", "format": "date_time" },
-        { "field": "process.parent.end", "format": "date_time" },
-        { "field": "process.parent.start", "format": "date_time" },
-        { "field": "process.start", "format": "date_time" },
+        {
+          "field": "process.parent.elf.creation_date",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "process.parent.end",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "process.parent.start",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "process.start",
+          "format": "strict_date_optional_time"
+        },
         {
           "field": "threat.enrichments.indicator.file.accessed",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.file.code_signature.timestamp",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.file.created",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.file.ctime",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.file.elf.creation_date",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.file.mtime",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.file.x509.not_after",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.file.x509.not_before",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.first_seen",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.last_seen",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.modified_at",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.x509.not_after",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.x509.not_before",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
-        { "field": "threat.indicator.file.accessed", "format": "date_time" },
+        {
+          "field": "threat.indicator.file.accessed",
+          "format": "strict_date_optional_time"
+        },
         {
           "field": "threat.indicator.file.code_signature.timestamp",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
-        { "field": "threat.indicator.file.created", "format": "date_time" },
-        { "field": "threat.indicator.file.ctime", "format": "date_time" },
+        {
+          "field": "threat.indicator.file.created",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "threat.indicator.file.ctime",
+          "format": "strict_date_optional_time"
+        },
         {
           "field": "threat.indicator.file.elf.creation_date",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
-        { "field": "threat.indicator.file.mtime", "format": "date_time" },
+        {
+          "field": "threat.indicator.file.mtime",
+          "format": "strict_date_optional_time"
+        },
         {
           "field": "threat.indicator.file.x509.not_after",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.indicator.file.x509.not_before",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
-        { "field": "threat.indicator.first_seen", "format": "date_time" },
-        { "field": "threat.indicator.last_seen", "format": "date_time" },
-        { "field": "threat.indicator.modified_at", "format": "date_time" },
-        { "field": "threat.indicator.x509.not_after", "format": "date_time" },
-        { "field": "threat.indicator.x509.not_before", "format": "date_time" },
-        { "field": "tls.client.not_after", "format": "date_time" },
-        { "field": "tls.client.not_before", "format": "date_time" },
-        { "field": "tls.client.x509.not_after", "format": "date_time" },
-        { "field": "tls.client.x509.not_before", "format": "date_time" },
-        { "field": "tls.server.not_after", "format": "date_time" },
-        { "field": "tls.server.not_before", "format": "date_time" },
-        { "field": "tls.server.x509.not_after", "format": "date_time" },
-        { "field": "tls.server.x509.not_before", "format": "date_time" },
-        { "field": "winlog.time_created", "format": "date_time" },
-        { "field": "x509.not_after", "format": "date_time" },
-        { "field": "x509.not_before", "format": "date_time" }
+        {
+          "field": "threat.indicator.first_seen",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "threat.indicator.last_seen",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "threat.indicator.modified_at",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "threat.indicator.x509.not_after",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "threat.indicator.x509.not_before",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "tls.client.not_after",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "tls.client.not_before",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "tls.client.x509.not_after",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "tls.client.x509.not_before",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "tls.server.not_after",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "tls.server.not_before",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "tls.server.x509.not_after",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "tls.server.x509.not_before",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "winlog.time_created",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "x509.not_after",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "x509.not_before",
+          "format": "strict_date_optional_time"
+        }
       ],
+      "size": 1000,
+      "version": true,
       "script_fields": {},
-      "stored_fields": ["*"],
+      "stored_fields": [
+        "*"
+      ],
       "runtime_mappings": {},
-      "_source": { "excludes": [] },
+      "_source": false,
       "query": {
         "bool": {
           "must": [],
@@ -824,8 +1037,8 @@
               "range": {
                 "@timestamp": {
                   "format": "strict_date_optional_time",
-                  "gte": "2022-12-01T17:37:05.000Z",
-                  "lte": "2022-12-01T17:39:43.000Z"
+                  "gte": "2022-12-02T20:08:40.306Z",
+                  "lte": "2022-12-03T06:08:40.306Z"
                 }
               }
             }
@@ -833,6 +1046,18 @@
           "should": [],
           "must_not": []
         }
+      },
+      "highlight": {
+        "pre_tags": [
+          "@kibana-highlighted-field@"
+        ],
+        "post_tags": [
+          "@/kibana-highlighted-field@"
+        ],
+        "fields": {
+          "*": {}
+        },
+        "fragment_size": 2147483647
       }
     }
   },
@@ -842,139 +1067,277 @@
     "last_gte": "",
     "last-lte": "",
     "query": {
-      "aggs": {
-        "0": {
-          "terms": {
-            "field": "host.hostname.keyword",
-            "order": { "_count": "desc" },
-            "size": 5,
-            "shard_size": 25
+      "track_total_hits": false,
+      "sort": [
+        {
+          "@timestamp": {
+            "order": "desc",
+            "unmapped_type": "boolean"
           }
         }
-      },
-      "size": 0,
+      ],
       "fields": [
-        { "field": "@timestamp", "format": "date_time" },
-        { "field": "code_signature.timestamp", "format": "date_time" },
-        { "field": "dll.code_signature.timestamp", "format": "date_time" },
-        { "field": "elf.creation_date", "format": "date_time" },
-        { "field": "event.created", "format": "date_time" },
-        { "field": "event.end", "format": "date_time" },
-        { "field": "event.ingested", "format": "date_time" },
-        { "field": "event.start", "format": "date_time" },
-        { "field": "file.accessed", "format": "date_time" },
-        { "field": "file.code_signature.timestamp", "format": "date_time" },
-        { "field": "file.created", "format": "date_time" },
-        { "field": "file.ctime", "format": "date_time" },
-        { "field": "file.elf.creation_date", "format": "date_time" },
-        { "field": "file.mtime", "format": "date_time" },
-        { "field": "file.x509.not_after", "format": "date_time" },
-        { "field": "file.x509.not_before", "format": "date_time" },
-        { "field": "package.installed", "format": "date_time" },
-        { "field": "process.code_signature.timestamp", "format": "date_time" },
-        { "field": "process.elf.creation_date", "format": "date_time" },
-        { "field": "process.end", "format": "date_time" },
+        {
+          "field": "*",
+          "include_unmapped": "true"
+        },
+        {
+          "field": "@timestamp",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "code_signature.timestamp",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "dll.code_signature.timestamp",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "elf.creation_date",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "event.created",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "event.end",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "event.ingested",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "event.start",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "file.accessed",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "file.code_signature.timestamp",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "file.created",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "file.ctime",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "file.elf.creation_date",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "file.mtime",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "file.x509.not_after",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "file.x509.not_before",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "package.installed",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "process.code_signature.timestamp",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "process.elf.creation_date",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "process.end",
+          "format": "strict_date_optional_time"
+        },
         {
           "field": "process.parent.code_signature.timestamp",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
-        { "field": "process.parent.elf.creation_date", "format": "date_time" },
-        { "field": "process.parent.end", "format": "date_time" },
-        { "field": "process.parent.start", "format": "date_time" },
-        { "field": "process.start", "format": "date_time" },
+        {
+          "field": "process.parent.elf.creation_date",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "process.parent.end",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "process.parent.start",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "process.start",
+          "format": "strict_date_optional_time"
+        },
         {
           "field": "threat.enrichments.indicator.file.accessed",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.file.code_signature.timestamp",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.file.created",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.file.ctime",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.file.elf.creation_date",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.file.mtime",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.file.x509.not_after",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.file.x509.not_before",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.first_seen",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.last_seen",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.modified_at",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.x509.not_after",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.x509.not_before",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
-        { "field": "threat.indicator.file.accessed", "format": "date_time" },
+        {
+          "field": "threat.indicator.file.accessed",
+          "format": "strict_date_optional_time"
+        },
         {
           "field": "threat.indicator.file.code_signature.timestamp",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
-        { "field": "threat.indicator.file.created", "format": "date_time" },
-        { "field": "threat.indicator.file.ctime", "format": "date_time" },
+        {
+          "field": "threat.indicator.file.created",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "threat.indicator.file.ctime",
+          "format": "strict_date_optional_time"
+        },
         {
           "field": "threat.indicator.file.elf.creation_date",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
-        { "field": "threat.indicator.file.mtime", "format": "date_time" },
+        {
+          "field": "threat.indicator.file.mtime",
+          "format": "strict_date_optional_time"
+        },
         {
           "field": "threat.indicator.file.x509.not_after",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.indicator.file.x509.not_before",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
-        { "field": "threat.indicator.first_seen", "format": "date_time" },
-        { "field": "threat.indicator.last_seen", "format": "date_time" },
-        { "field": "threat.indicator.modified_at", "format": "date_time" },
-        { "field": "threat.indicator.x509.not_after", "format": "date_time" },
-        { "field": "threat.indicator.x509.not_before", "format": "date_time" },
-        { "field": "tls.client.not_after", "format": "date_time" },
-        { "field": "tls.client.not_before", "format": "date_time" },
-        { "field": "tls.client.x509.not_after", "format": "date_time" },
-        { "field": "tls.client.x509.not_before", "format": "date_time" },
-        { "field": "tls.server.not_after", "format": "date_time" },
-        { "field": "tls.server.not_before", "format": "date_time" },
-        { "field": "tls.server.x509.not_after", "format": "date_time" },
-        { "field": "tls.server.x509.not_before", "format": "date_time" },
-        { "field": "winlog.time_created", "format": "date_time" },
-        { "field": "x509.not_after", "format": "date_time" },
-        { "field": "x509.not_before", "format": "date_time" }
+        {
+          "field": "threat.indicator.first_seen",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "threat.indicator.last_seen",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "threat.indicator.modified_at",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "threat.indicator.x509.not_after",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "threat.indicator.x509.not_before",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "tls.client.not_after",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "tls.client.not_before",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "tls.client.x509.not_after",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "tls.client.x509.not_before",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "tls.server.not_after",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "tls.server.not_before",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "tls.server.x509.not_after",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "tls.server.x509.not_before",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "winlog.time_created",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "x509.not_after",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "x509.not_before",
+          "format": "strict_date_optional_time"
+        }
       ],
+      "size": 1000,
+      "version": true,
       "script_fields": {},
-      "stored_fields": ["*"],
+      "stored_fields": [
+        "*"
+      ],
       "runtime_mappings": {},
-      "_source": { "excludes": [] },
+      "_source": false,
       "query": {
         "bool": {
           "must": [],
@@ -1080,8 +1443,8 @@
               "range": {
                 "@timestamp": {
                   "format": "strict_date_optional_time",
-                  "gte": "2022-12-01T17:37:05.000Z",
-                  "lte": "2022-12-01T17:39:45.000Z"
+                  "gte": "2022-12-02T20:10:29.351Z",
+                  "lte": "2022-12-03T06:10:29.351Z"
                 }
               }
             }
@@ -1089,6 +1452,18 @@
           "should": [],
           "must_not": []
         }
+      },
+      "highlight": {
+        "pre_tags": [
+          "@kibana-highlighted-field@"
+        ],
+        "post_tags": [
+          "@/kibana-highlighted-field@"
+        ],
+        "fields": {
+          "*": {}
+        },
+        "fragment_size": 2147483647
       }
     }
   },
@@ -1098,139 +1473,277 @@
     "last_gte": "",
     "last-lte": "",
     "query": {
-      "aggs": {
-        "0": {
-          "terms": {
-            "field": "host.hostname.keyword",
-            "order": { "_count": "desc" },
-            "size": 10,
-            "shard_size": 25
+      "track_total_hits": false,
+      "sort": [
+        {
+          "@timestamp": {
+            "order": "desc",
+            "unmapped_type": "boolean"
           }
         }
-      },
-      "size": 0,
+      ],
       "fields": [
-        { "field": "@timestamp", "format": "date_time" },
-        { "field": "code_signature.timestamp", "format": "date_time" },
-        { "field": "dll.code_signature.timestamp", "format": "date_time" },
-        { "field": "elf.creation_date", "format": "date_time" },
-        { "field": "event.created", "format": "date_time" },
-        { "field": "event.end", "format": "date_time" },
-        { "field": "event.ingested", "format": "date_time" },
-        { "field": "event.start", "format": "date_time" },
-        { "field": "file.accessed", "format": "date_time" },
-        { "field": "file.code_signature.timestamp", "format": "date_time" },
-        { "field": "file.created", "format": "date_time" },
-        { "field": "file.ctime", "format": "date_time" },
-        { "field": "file.elf.creation_date", "format": "date_time" },
-        { "field": "file.mtime", "format": "date_time" },
-        { "field": "file.x509.not_after", "format": "date_time" },
-        { "field": "file.x509.not_before", "format": "date_time" },
-        { "field": "package.installed", "format": "date_time" },
-        { "field": "process.code_signature.timestamp", "format": "date_time" },
-        { "field": "process.elf.creation_date", "format": "date_time" },
-        { "field": "process.end", "format": "date_time" },
+        {
+          "field": "*",
+          "include_unmapped": "true"
+        },
+        {
+          "field": "@timestamp",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "code_signature.timestamp",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "dll.code_signature.timestamp",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "elf.creation_date",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "event.created",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "event.end",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "event.ingested",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "event.start",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "file.accessed",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "file.code_signature.timestamp",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "file.created",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "file.ctime",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "file.elf.creation_date",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "file.mtime",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "file.x509.not_after",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "file.x509.not_before",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "package.installed",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "process.code_signature.timestamp",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "process.elf.creation_date",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "process.end",
+          "format": "strict_date_optional_time"
+        },
         {
           "field": "process.parent.code_signature.timestamp",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
-        { "field": "process.parent.elf.creation_date", "format": "date_time" },
-        { "field": "process.parent.end", "format": "date_time" },
-        { "field": "process.parent.start", "format": "date_time" },
-        { "field": "process.start", "format": "date_time" },
+        {
+          "field": "process.parent.elf.creation_date",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "process.parent.end",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "process.parent.start",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "process.start",
+          "format": "strict_date_optional_time"
+        },
         {
           "field": "threat.enrichments.indicator.file.accessed",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.file.code_signature.timestamp",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.file.created",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.file.ctime",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.file.elf.creation_date",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.file.mtime",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.file.x509.not_after",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.file.x509.not_before",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.first_seen",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.last_seen",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.modified_at",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.x509.not_after",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.x509.not_before",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
-        { "field": "threat.indicator.file.accessed", "format": "date_time" },
+        {
+          "field": "threat.indicator.file.accessed",
+          "format": "strict_date_optional_time"
+        },
         {
           "field": "threat.indicator.file.code_signature.timestamp",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
-        { "field": "threat.indicator.file.created", "format": "date_time" },
-        { "field": "threat.indicator.file.ctime", "format": "date_time" },
+        {
+          "field": "threat.indicator.file.created",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "threat.indicator.file.ctime",
+          "format": "strict_date_optional_time"
+        },
         {
           "field": "threat.indicator.file.elf.creation_date",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
-        { "field": "threat.indicator.file.mtime", "format": "date_time" },
+        {
+          "field": "threat.indicator.file.mtime",
+          "format": "strict_date_optional_time"
+        },
         {
           "field": "threat.indicator.file.x509.not_after",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.indicator.file.x509.not_before",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
-        { "field": "threat.indicator.first_seen", "format": "date_time" },
-        { "field": "threat.indicator.last_seen", "format": "date_time" },
-        { "field": "threat.indicator.modified_at", "format": "date_time" },
-        { "field": "threat.indicator.x509.not_after", "format": "date_time" },
-        { "field": "threat.indicator.x509.not_before", "format": "date_time" },
-        { "field": "tls.client.not_after", "format": "date_time" },
-        { "field": "tls.client.not_before", "format": "date_time" },
-        { "field": "tls.client.x509.not_after", "format": "date_time" },
-        { "field": "tls.client.x509.not_before", "format": "date_time" },
-        { "field": "tls.server.not_after", "format": "date_time" },
-        { "field": "tls.server.not_before", "format": "date_time" },
-        { "field": "tls.server.x509.not_after", "format": "date_time" },
-        { "field": "tls.server.x509.not_before", "format": "date_time" },
-        { "field": "winlog.time_created", "format": "date_time" },
-        { "field": "x509.not_after", "format": "date_time" },
-        { "field": "x509.not_before", "format": "date_time" }
+        {
+          "field": "threat.indicator.first_seen",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "threat.indicator.last_seen",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "threat.indicator.modified_at",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "threat.indicator.x509.not_after",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "threat.indicator.x509.not_before",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "tls.client.not_after",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "tls.client.not_before",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "tls.client.x509.not_after",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "tls.client.x509.not_before",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "tls.server.not_after",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "tls.server.not_before",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "tls.server.x509.not_after",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "tls.server.x509.not_before",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "winlog.time_created",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "x509.not_after",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "x509.not_before",
+          "format": "strict_date_optional_time"
+        }
       ],
+      "size": 1000,
+      "version": true,
       "script_fields": {},
-      "stored_fields": ["*"],
+      "stored_fields": [
+        "*"
+      ],
       "runtime_mappings": {},
-      "_source": { "excludes": [] },
+      "_source": false,
       "query": {
         "bool": {
           "must": [],
@@ -1346,20 +1859,36 @@
                 ]
               }
             },
-            { "match_phrase": { "event.dataset.keyword": "iis.access" } },
             {
               "range": {
                 "@timestamp": {
                   "format": "strict_date_optional_time",
-                  "gte": "2022-12-01T17:36:43.000Z",
-                  "lte": "2022-12-01T17:37:05.000Z"
+                  "gte": "2022-12-03T01:17:01.684Z",
+                  "lte": "2022-12-03T06:17:01.684Z"
                 }
+              }
+            },
+            {
+              "match_phrase": {
+                "event.dataset.keyword": "iis.access"
               }
             }
           ],
           "should": [],
           "must_not": []
         }
+      },
+      "highlight": {
+        "pre_tags": [
+          "@kibana-highlighted-field@"
+        ],
+        "post_tags": [
+          "@/kibana-highlighted-field@"
+        ],
+        "fields": {
+          "*": {}
+        },
+        "fragment_size": 2147483647
       }
     }
   },
@@ -1369,138 +1898,277 @@
     "last_gte": "",
     "last-lte": "",
     "query": {
-      "aggs": {
-        "0": {
-          "terms": {
-            "field": "host.hostname.keyword",
-            "order": { "_key": "asc" },
-            "size": 20
+      "track_total_hits": false,
+      "sort": [
+        {
+          "@timestamp": {
+            "order": "desc",
+            "unmapped_type": "boolean"
           }
         }
-      },
-      "size": 0,
+      ],
       "fields": [
-        { "field": "@timestamp", "format": "date_time" },
-        { "field": "code_signature.timestamp", "format": "date_time" },
-        { "field": "dll.code_signature.timestamp", "format": "date_time" },
-        { "field": "elf.creation_date", "format": "date_time" },
-        { "field": "event.created", "format": "date_time" },
-        { "field": "event.end", "format": "date_time" },
-        { "field": "event.ingested", "format": "date_time" },
-        { "field": "event.start", "format": "date_time" },
-        { "field": "file.accessed", "format": "date_time" },
-        { "field": "file.code_signature.timestamp", "format": "date_time" },
-        { "field": "file.created", "format": "date_time" },
-        { "field": "file.ctime", "format": "date_time" },
-        { "field": "file.elf.creation_date", "format": "date_time" },
-        { "field": "file.mtime", "format": "date_time" },
-        { "field": "file.x509.not_after", "format": "date_time" },
-        { "field": "file.x509.not_before", "format": "date_time" },
-        { "field": "package.installed", "format": "date_time" },
-        { "field": "process.code_signature.timestamp", "format": "date_time" },
-        { "field": "process.elf.creation_date", "format": "date_time" },
-        { "field": "process.end", "format": "date_time" },
+        {
+          "field": "*",
+          "include_unmapped": "true"
+        },
+        {
+          "field": "@timestamp",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "code_signature.timestamp",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "dll.code_signature.timestamp",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "elf.creation_date",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "event.created",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "event.end",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "event.ingested",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "event.start",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "file.accessed",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "file.code_signature.timestamp",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "file.created",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "file.ctime",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "file.elf.creation_date",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "file.mtime",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "file.x509.not_after",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "file.x509.not_before",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "package.installed",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "process.code_signature.timestamp",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "process.elf.creation_date",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "process.end",
+          "format": "strict_date_optional_time"
+        },
         {
           "field": "process.parent.code_signature.timestamp",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
-        { "field": "process.parent.elf.creation_date", "format": "date_time" },
-        { "field": "process.parent.end", "format": "date_time" },
-        { "field": "process.parent.start", "format": "date_time" },
-        { "field": "process.start", "format": "date_time" },
+        {
+          "field": "process.parent.elf.creation_date",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "process.parent.end",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "process.parent.start",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "process.start",
+          "format": "strict_date_optional_time"
+        },
         {
           "field": "threat.enrichments.indicator.file.accessed",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.file.code_signature.timestamp",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.file.created",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.file.ctime",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.file.elf.creation_date",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.file.mtime",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.file.x509.not_after",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.file.x509.not_before",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.first_seen",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.last_seen",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.modified_at",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.x509.not_after",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.x509.not_before",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
-        { "field": "threat.indicator.file.accessed", "format": "date_time" },
+        {
+          "field": "threat.indicator.file.accessed",
+          "format": "strict_date_optional_time"
+        },
         {
           "field": "threat.indicator.file.code_signature.timestamp",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
-        { "field": "threat.indicator.file.created", "format": "date_time" },
-        { "field": "threat.indicator.file.ctime", "format": "date_time" },
+        {
+          "field": "threat.indicator.file.created",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "threat.indicator.file.ctime",
+          "format": "strict_date_optional_time"
+        },
         {
           "field": "threat.indicator.file.elf.creation_date",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
-        { "field": "threat.indicator.file.mtime", "format": "date_time" },
+        {
+          "field": "threat.indicator.file.mtime",
+          "format": "strict_date_optional_time"
+        },
         {
           "field": "threat.indicator.file.x509.not_after",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.indicator.file.x509.not_before",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
-        { "field": "threat.indicator.first_seen", "format": "date_time" },
-        { "field": "threat.indicator.last_seen", "format": "date_time" },
-        { "field": "threat.indicator.modified_at", "format": "date_time" },
-        { "field": "threat.indicator.x509.not_after", "format": "date_time" },
-        { "field": "threat.indicator.x509.not_before", "format": "date_time" },
-        { "field": "tls.client.not_after", "format": "date_time" },
-        { "field": "tls.client.not_before", "format": "date_time" },
-        { "field": "tls.client.x509.not_after", "format": "date_time" },
-        { "field": "tls.client.x509.not_before", "format": "date_time" },
-        { "field": "tls.server.not_after", "format": "date_time" },
-        { "field": "tls.server.not_before", "format": "date_time" },
-        { "field": "tls.server.x509.not_after", "format": "date_time" },
-        { "field": "tls.server.x509.not_before", "format": "date_time" },
-        { "field": "winlog.time_created", "format": "date_time" },
-        { "field": "x509.not_after", "format": "date_time" },
-        { "field": "x509.not_before", "format": "date_time" }
+        {
+          "field": "threat.indicator.first_seen",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "threat.indicator.last_seen",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "threat.indicator.modified_at",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "threat.indicator.x509.not_after",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "threat.indicator.x509.not_before",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "tls.client.not_after",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "tls.client.not_before",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "tls.client.x509.not_after",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "tls.client.x509.not_before",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "tls.server.not_after",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "tls.server.not_before",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "tls.server.x509.not_after",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "tls.server.x509.not_before",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "winlog.time_created",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "x509.not_after",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "x509.not_before",
+          "format": "strict_date_optional_time"
+        }
       ],
+      "size": 1000,
+      "version": true,
       "script_fields": {},
-      "stored_fields": ["*"],
+      "stored_fields": [
+        "*"
+      ],
       "runtime_mappings": {},
-      "_source": { "excludes": [] },
+      "_source": false,
       "query": {
         "bool": {
           "must": [],
@@ -1609,20 +2277,36 @@
                 ]
               }
             },
-            { "match_phrase": { "agent.type": "winlogbeat" } },
             {
               "range": {
                 "@timestamp": {
                   "format": "strict_date_optional_time",
-                  "gte": "2022-12-01T17:36:43.000Z",
-                  "lte": "2022-12-01T17:37:05.000Z"
+                  "gte": "2022-12-03T01:18:11.834Z",
+                  "lte": "2022-12-03T06:18:11.834Z"
                 }
+              }
+            },
+            {
+              "match_phrase": {
+                "agent.type": "winlogbeat"
               }
             }
           ],
           "should": [],
           "must_not": []
         }
+      },
+      "highlight": {
+        "pre_tags": [
+          "@kibana-highlighted-field@"
+        ],
+        "post_tags": [
+          "@/kibana-highlighted-field@"
+        ],
+        "fields": {
+          "*": {}
+        },
+        "fragment_size": 2147483647
       }
     }
   },
@@ -1632,139 +2316,277 @@
     "last_gte": "",
     "last-lte": "",
     "query": {
-      "aggs": {
-        "0": {
-          "terms": {
-            "field": "host.hostname.keyword",
-            "order": { "_count": "desc" },
-            "size": 10,
-            "shard_size": 25
+      "track_total_hits": false,
+      "sort": [
+        {
+          "@timestamp": {
+            "order": "desc",
+            "unmapped_type": "boolean"
           }
         }
-      },
-      "size": 0,
+      ],
       "fields": [
-        { "field": "@timestamp", "format": "date_time" },
-        { "field": "code_signature.timestamp", "format": "date_time" },
-        { "field": "dll.code_signature.timestamp", "format": "date_time" },
-        { "field": "elf.creation_date", "format": "date_time" },
-        { "field": "event.created", "format": "date_time" },
-        { "field": "event.end", "format": "date_time" },
-        { "field": "event.ingested", "format": "date_time" },
-        { "field": "event.start", "format": "date_time" },
-        { "field": "file.accessed", "format": "date_time" },
-        { "field": "file.code_signature.timestamp", "format": "date_time" },
-        { "field": "file.created", "format": "date_time" },
-        { "field": "file.ctime", "format": "date_time" },
-        { "field": "file.elf.creation_date", "format": "date_time" },
-        { "field": "file.mtime", "format": "date_time" },
-        { "field": "file.x509.not_after", "format": "date_time" },
-        { "field": "file.x509.not_before", "format": "date_time" },
-        { "field": "package.installed", "format": "date_time" },
-        { "field": "process.code_signature.timestamp", "format": "date_time" },
-        { "field": "process.elf.creation_date", "format": "date_time" },
-        { "field": "process.end", "format": "date_time" },
+        {
+          "field": "*",
+          "include_unmapped": "true"
+        },
+        {
+          "field": "@timestamp",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "code_signature.timestamp",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "dll.code_signature.timestamp",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "elf.creation_date",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "event.created",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "event.end",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "event.ingested",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "event.start",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "file.accessed",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "file.code_signature.timestamp",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "file.created",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "file.ctime",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "file.elf.creation_date",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "file.mtime",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "file.x509.not_after",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "file.x509.not_before",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "package.installed",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "process.code_signature.timestamp",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "process.elf.creation_date",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "process.end",
+          "format": "strict_date_optional_time"
+        },
         {
           "field": "process.parent.code_signature.timestamp",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
-        { "field": "process.parent.elf.creation_date", "format": "date_time" },
-        { "field": "process.parent.end", "format": "date_time" },
-        { "field": "process.parent.start", "format": "date_time" },
-        { "field": "process.start", "format": "date_time" },
+        {
+          "field": "process.parent.elf.creation_date",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "process.parent.end",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "process.parent.start",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "process.start",
+          "format": "strict_date_optional_time"
+        },
         {
           "field": "threat.enrichments.indicator.file.accessed",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.file.code_signature.timestamp",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.file.created",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.file.ctime",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.file.elf.creation_date",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.file.mtime",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.file.x509.not_after",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.file.x509.not_before",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.first_seen",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.last_seen",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.modified_at",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.x509.not_after",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.x509.not_before",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
-        { "field": "threat.indicator.file.accessed", "format": "date_time" },
+        {
+          "field": "threat.indicator.file.accessed",
+          "format": "strict_date_optional_time"
+        },
         {
           "field": "threat.indicator.file.code_signature.timestamp",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
-        { "field": "threat.indicator.file.created", "format": "date_time" },
-        { "field": "threat.indicator.file.ctime", "format": "date_time" },
+        {
+          "field": "threat.indicator.file.created",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "threat.indicator.file.ctime",
+          "format": "strict_date_optional_time"
+        },
         {
           "field": "threat.indicator.file.elf.creation_date",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
-        { "field": "threat.indicator.file.mtime", "format": "date_time" },
+        {
+          "field": "threat.indicator.file.mtime",
+          "format": "strict_date_optional_time"
+        },
         {
           "field": "threat.indicator.file.x509.not_after",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.indicator.file.x509.not_before",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
-        { "field": "threat.indicator.first_seen", "format": "date_time" },
-        { "field": "threat.indicator.last_seen", "format": "date_time" },
-        { "field": "threat.indicator.modified_at", "format": "date_time" },
-        { "field": "threat.indicator.x509.not_after", "format": "date_time" },
-        { "field": "threat.indicator.x509.not_before", "format": "date_time" },
-        { "field": "tls.client.not_after", "format": "date_time" },
-        { "field": "tls.client.not_before", "format": "date_time" },
-        { "field": "tls.client.x509.not_after", "format": "date_time" },
-        { "field": "tls.client.x509.not_before", "format": "date_time" },
-        { "field": "tls.server.not_after", "format": "date_time" },
-        { "field": "tls.server.not_before", "format": "date_time" },
-        { "field": "tls.server.x509.not_after", "format": "date_time" },
-        { "field": "tls.server.x509.not_before", "format": "date_time" },
-        { "field": "winlog.time_created", "format": "date_time" },
-        { "field": "x509.not_after", "format": "date_time" },
-        { "field": "x509.not_before", "format": "date_time" }
+        {
+          "field": "threat.indicator.first_seen",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "threat.indicator.last_seen",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "threat.indicator.modified_at",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "threat.indicator.x509.not_after",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "threat.indicator.x509.not_before",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "tls.client.not_after",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "tls.client.not_before",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "tls.client.x509.not_after",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "tls.client.x509.not_before",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "tls.server.not_after",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "tls.server.not_before",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "tls.server.x509.not_after",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "tls.server.x509.not_before",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "winlog.time_created",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "x509.not_after",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "x509.not_before",
+          "format": "strict_date_optional_time"
+        }
       ],
+      "size": 1000,
+      "version": true,
       "script_fields": {},
-      "stored_fields": ["*"],
+      "stored_fields": [
+        "*"
+      ],
       "runtime_mappings": {},
-      "_source": { "excludes": [] },
+      "_source": false,
       "query": {
         "bool": {
           "must": [],
@@ -1856,8 +2678,8 @@
               "range": {
                 "@timestamp": {
                   "format": "strict_date_optional_time",
-                  "gte": "2022-12-01T17:36:44.000Z",
-                  "lte": "2022-12-01T17:37:06.000Z"
+                  "gte": "2022-12-03T01:19:07.588Z",
+                  "lte": "2022-12-03T06:19:07.588Z"
                 }
               }
             }
@@ -1865,6 +2687,18 @@
           "should": [],
           "must_not": []
         }
+      },
+      "highlight": {
+        "pre_tags": [
+          "@kibana-highlighted-field@"
+        ],
+        "post_tags": [
+          "@/kibana-highlighted-field@"
+        ],
+        "fields": {
+          "*": {}
+        },
+        "fragment_size": 2147483647
       }
     }
   },
@@ -1874,139 +2708,277 @@
     "last_gte": "",
     "last-lte": "",
     "query": {
-      "aggs": {
-        "0": {
-          "terms": {
-            "field": "host.hostname.keyword",
-            "order": { "_count": "desc" },
-            "size": 5,
-            "shard_size": 25
+      "track_total_hits": false,
+      "sort": [
+        {
+          "@timestamp": {
+            "order": "desc",
+            "unmapped_type": "boolean"
           }
         }
-      },
-      "size": 0,
+      ],
       "fields": [
-        { "field": "@timestamp", "format": "date_time" },
-        { "field": "code_signature.timestamp", "format": "date_time" },
-        { "field": "dll.code_signature.timestamp", "format": "date_time" },
-        { "field": "elf.creation_date", "format": "date_time" },
-        { "field": "event.created", "format": "date_time" },
-        { "field": "event.end", "format": "date_time" },
-        { "field": "event.ingested", "format": "date_time" },
-        { "field": "event.start", "format": "date_time" },
-        { "field": "file.accessed", "format": "date_time" },
-        { "field": "file.code_signature.timestamp", "format": "date_time" },
-        { "field": "file.created", "format": "date_time" },
-        { "field": "file.ctime", "format": "date_time" },
-        { "field": "file.elf.creation_date", "format": "date_time" },
-        { "field": "file.mtime", "format": "date_time" },
-        { "field": "file.x509.not_after", "format": "date_time" },
-        { "field": "file.x509.not_before", "format": "date_time" },
-        { "field": "package.installed", "format": "date_time" },
-        { "field": "process.code_signature.timestamp", "format": "date_time" },
-        { "field": "process.elf.creation_date", "format": "date_time" },
-        { "field": "process.end", "format": "date_time" },
+        {
+          "field": "*",
+          "include_unmapped": "true"
+        },
+        {
+          "field": "@timestamp",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "code_signature.timestamp",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "dll.code_signature.timestamp",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "elf.creation_date",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "event.created",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "event.end",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "event.ingested",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "event.start",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "file.accessed",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "file.code_signature.timestamp",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "file.created",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "file.ctime",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "file.elf.creation_date",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "file.mtime",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "file.x509.not_after",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "file.x509.not_before",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "package.installed",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "process.code_signature.timestamp",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "process.elf.creation_date",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "process.end",
+          "format": "strict_date_optional_time"
+        },
         {
           "field": "process.parent.code_signature.timestamp",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
-        { "field": "process.parent.elf.creation_date", "format": "date_time" },
-        { "field": "process.parent.end", "format": "date_time" },
-        { "field": "process.parent.start", "format": "date_time" },
-        { "field": "process.start", "format": "date_time" },
+        {
+          "field": "process.parent.elf.creation_date",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "process.parent.end",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "process.parent.start",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "process.start",
+          "format": "strict_date_optional_time"
+        },
         {
           "field": "threat.enrichments.indicator.file.accessed",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.file.code_signature.timestamp",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.file.created",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.file.ctime",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.file.elf.creation_date",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.file.mtime",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.file.x509.not_after",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.file.x509.not_before",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.first_seen",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.last_seen",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.modified_at",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.x509.not_after",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.x509.not_before",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
-        { "field": "threat.indicator.file.accessed", "format": "date_time" },
+        {
+          "field": "threat.indicator.file.accessed",
+          "format": "strict_date_optional_time"
+        },
         {
           "field": "threat.indicator.file.code_signature.timestamp",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
-        { "field": "threat.indicator.file.created", "format": "date_time" },
-        { "field": "threat.indicator.file.ctime", "format": "date_time" },
+        {
+          "field": "threat.indicator.file.created",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "threat.indicator.file.ctime",
+          "format": "strict_date_optional_time"
+        },
         {
           "field": "threat.indicator.file.elf.creation_date",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
-        { "field": "threat.indicator.file.mtime", "format": "date_time" },
+        {
+          "field": "threat.indicator.file.mtime",
+          "format": "strict_date_optional_time"
+        },
         {
           "field": "threat.indicator.file.x509.not_after",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.indicator.file.x509.not_before",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
-        { "field": "threat.indicator.first_seen", "format": "date_time" },
-        { "field": "threat.indicator.last_seen", "format": "date_time" },
-        { "field": "threat.indicator.modified_at", "format": "date_time" },
-        { "field": "threat.indicator.x509.not_after", "format": "date_time" },
-        { "field": "threat.indicator.x509.not_before", "format": "date_time" },
-        { "field": "tls.client.not_after", "format": "date_time" },
-        { "field": "tls.client.not_before", "format": "date_time" },
-        { "field": "tls.client.x509.not_after", "format": "date_time" },
-        { "field": "tls.client.x509.not_before", "format": "date_time" },
-        { "field": "tls.server.not_after", "format": "date_time" },
-        { "field": "tls.server.not_before", "format": "date_time" },
-        { "field": "tls.server.x509.not_after", "format": "date_time" },
-        { "field": "tls.server.x509.not_before", "format": "date_time" },
-        { "field": "winlog.time_created", "format": "date_time" },
-        { "field": "x509.not_after", "format": "date_time" },
-        { "field": "x509.not_before", "format": "date_time" }
+        {
+          "field": "threat.indicator.first_seen",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "threat.indicator.last_seen",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "threat.indicator.modified_at",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "threat.indicator.x509.not_after",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "threat.indicator.x509.not_before",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "tls.client.not_after",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "tls.client.not_before",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "tls.client.x509.not_after",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "tls.client.x509.not_before",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "tls.server.not_after",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "tls.server.not_before",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "tls.server.x509.not_after",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "tls.server.x509.not_before",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "winlog.time_created",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "x509.not_after",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "x509.not_before",
+          "format": "strict_date_optional_time"
+        }
       ],
+      "size": 1000,
+      "version": true,
       "script_fields": {},
-      "stored_fields": ["*"],
+      "stored_fields": [
+        "*"
+      ],
       "runtime_mappings": {},
-      "_source": { "excludes": [] },
+      "_source": false,
       "query": {
         "bool": {
           "must": [],
@@ -2124,8 +3096,8 @@
               "range": {
                 "@timestamp": {
                   "format": "strict_date_optional_time",
-                  "gte": "2022-12-01T17:36:44.000Z",
-                  "lte": "2022-12-01T17:37:06.000Z"
+                  "gte": "2022-12-03T01:20:20.311Z",
+                  "lte": "2022-12-03T06:20:20.311Z"
                 }
               }
             }
@@ -2133,6 +3105,18 @@
           "should": [],
           "must_not": []
         }
+      },
+      "highlight": {
+        "pre_tags": [
+          "@kibana-highlighted-field@"
+        ],
+        "post_tags": [
+          "@/kibana-highlighted-field@"
+        ],
+        "fields": {
+          "*": {}
+        },
+        "fragment_size": 2147483647
       }
     }
   },
@@ -2142,139 +3126,277 @@
     "last_gte": "",
     "last-lte": "",
     "query": {
-      "aggs": {
-        "0": {
-          "terms": {
-            "field": "host.hostname.keyword",
-            "order": { "_count": "desc" },
-            "size": 5,
-            "shard_size": 25
+      "track_total_hits": false,
+      "sort": [
+        {
+          "@timestamp": {
+            "order": "desc",
+            "unmapped_type": "boolean"
           }
         }
-      },
-      "size": 0,
+      ],
       "fields": [
-        { "field": "@timestamp", "format": "date_time" },
-        { "field": "code_signature.timestamp", "format": "date_time" },
-        { "field": "dll.code_signature.timestamp", "format": "date_time" },
-        { "field": "elf.creation_date", "format": "date_time" },
-        { "field": "event.created", "format": "date_time" },
-        { "field": "event.end", "format": "date_time" },
-        { "field": "event.ingested", "format": "date_time" },
-        { "field": "event.start", "format": "date_time" },
-        { "field": "file.accessed", "format": "date_time" },
-        { "field": "file.code_signature.timestamp", "format": "date_time" },
-        { "field": "file.created", "format": "date_time" },
-        { "field": "file.ctime", "format": "date_time" },
-        { "field": "file.elf.creation_date", "format": "date_time" },
-        { "field": "file.mtime", "format": "date_time" },
-        { "field": "file.x509.not_after", "format": "date_time" },
-        { "field": "file.x509.not_before", "format": "date_time" },
-        { "field": "package.installed", "format": "date_time" },
-        { "field": "process.code_signature.timestamp", "format": "date_time" },
-        { "field": "process.elf.creation_date", "format": "date_time" },
-        { "field": "process.end", "format": "date_time" },
+        {
+          "field": "*",
+          "include_unmapped": "true"
+        },
+        {
+          "field": "@timestamp",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "code_signature.timestamp",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "dll.code_signature.timestamp",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "elf.creation_date",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "event.created",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "event.end",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "event.ingested",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "event.start",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "file.accessed",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "file.code_signature.timestamp",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "file.created",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "file.ctime",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "file.elf.creation_date",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "file.mtime",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "file.x509.not_after",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "file.x509.not_before",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "package.installed",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "process.code_signature.timestamp",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "process.elf.creation_date",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "process.end",
+          "format": "strict_date_optional_time"
+        },
         {
           "field": "process.parent.code_signature.timestamp",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
-        { "field": "process.parent.elf.creation_date", "format": "date_time" },
-        { "field": "process.parent.end", "format": "date_time" },
-        { "field": "process.parent.start", "format": "date_time" },
-        { "field": "process.start", "format": "date_time" },
+        {
+          "field": "process.parent.elf.creation_date",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "process.parent.end",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "process.parent.start",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "process.start",
+          "format": "strict_date_optional_time"
+        },
         {
           "field": "threat.enrichments.indicator.file.accessed",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.file.code_signature.timestamp",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.file.created",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.file.ctime",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.file.elf.creation_date",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.file.mtime",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.file.x509.not_after",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.file.x509.not_before",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.first_seen",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.last_seen",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.modified_at",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.x509.not_after",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.x509.not_before",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
-        { "field": "threat.indicator.file.accessed", "format": "date_time" },
+        {
+          "field": "threat.indicator.file.accessed",
+          "format": "strict_date_optional_time"
+        },
         {
           "field": "threat.indicator.file.code_signature.timestamp",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
-        { "field": "threat.indicator.file.created", "format": "date_time" },
-        { "field": "threat.indicator.file.ctime", "format": "date_time" },
+        {
+          "field": "threat.indicator.file.created",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "threat.indicator.file.ctime",
+          "format": "strict_date_optional_time"
+        },
         {
           "field": "threat.indicator.file.elf.creation_date",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
-        { "field": "threat.indicator.file.mtime", "format": "date_time" },
+        {
+          "field": "threat.indicator.file.mtime",
+          "format": "strict_date_optional_time"
+        },
         {
           "field": "threat.indicator.file.x509.not_after",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.indicator.file.x509.not_before",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
-        { "field": "threat.indicator.first_seen", "format": "date_time" },
-        { "field": "threat.indicator.last_seen", "format": "date_time" },
-        { "field": "threat.indicator.modified_at", "format": "date_time" },
-        { "field": "threat.indicator.x509.not_after", "format": "date_time" },
-        { "field": "threat.indicator.x509.not_before", "format": "date_time" },
-        { "field": "tls.client.not_after", "format": "date_time" },
-        { "field": "tls.client.not_before", "format": "date_time" },
-        { "field": "tls.client.x509.not_after", "format": "date_time" },
-        { "field": "tls.client.x509.not_before", "format": "date_time" },
-        { "field": "tls.server.not_after", "format": "date_time" },
-        { "field": "tls.server.not_before", "format": "date_time" },
-        { "field": "tls.server.x509.not_after", "format": "date_time" },
-        { "field": "tls.server.x509.not_before", "format": "date_time" },
-        { "field": "winlog.time_created", "format": "date_time" },
-        { "field": "x509.not_after", "format": "date_time" },
-        { "field": "x509.not_before", "format": "date_time" }
+        {
+          "field": "threat.indicator.first_seen",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "threat.indicator.last_seen",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "threat.indicator.modified_at",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "threat.indicator.x509.not_after",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "threat.indicator.x509.not_before",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "tls.client.not_after",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "tls.client.not_before",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "tls.client.x509.not_after",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "tls.client.x509.not_before",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "tls.server.not_after",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "tls.server.not_before",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "tls.server.x509.not_after",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "tls.server.x509.not_before",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "winlog.time_created",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "x509.not_after",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "x509.not_before",
+          "format": "strict_date_optional_time"
+        }
       ],
+      "size": 1000,
+      "version": true,
       "script_fields": {},
-      "stored_fields": ["*"],
+      "stored_fields": [
+        "*"
+      ],
       "runtime_mappings": {},
-      "_source": { "excludes": [] },
+      "_source": false,
       "query": {
         "bool": {
           "must": [],
@@ -2510,8 +3632,8 @@
               "range": {
                 "@timestamp": {
                   "format": "strict_date_optional_time",
-                  "gte": "2022-12-01T17:36:44.000Z",
-                  "lte": "2022-12-01T17:37:06.000Z"
+                  "gte": "2022-12-03T01:20:57.847Z",
+                  "lte": "2022-12-03T06:20:57.847Z"
                 }
               }
             }
@@ -2519,6 +3641,18 @@
           "should": [],
           "must_not": []
         }
+      },
+      "highlight": {
+        "pre_tags": [
+          "@kibana-highlighted-field@"
+        ],
+        "post_tags": [
+          "@/kibana-highlighted-field@"
+        ],
+        "fields": {
+          "*": {}
+        },
+        "fragment_size": 2147483647
       }
     }
   },
@@ -2528,139 +3662,277 @@
     "last_gte": "",
     "last-lte": "",
     "query": {
-      "aggs": {
-        "0": {
-          "terms": {
-            "field": "host.hostname.keyword",
-            "order": { "_count": "desc" },
-            "size": 10,
-            "shard_size": 25
+      "track_total_hits": false,
+      "sort": [
+        {
+          "@timestamp": {
+            "order": "desc",
+            "unmapped_type": "boolean"
           }
         }
-      },
-      "size": 0,
+      ],
       "fields": [
-        { "field": "@timestamp", "format": "date_time" },
-        { "field": "code_signature.timestamp", "format": "date_time" },
-        { "field": "dll.code_signature.timestamp", "format": "date_time" },
-        { "field": "elf.creation_date", "format": "date_time" },
-        { "field": "event.created", "format": "date_time" },
-        { "field": "event.end", "format": "date_time" },
-        { "field": "event.ingested", "format": "date_time" },
-        { "field": "event.start", "format": "date_time" },
-        { "field": "file.accessed", "format": "date_time" },
-        { "field": "file.code_signature.timestamp", "format": "date_time" },
-        { "field": "file.created", "format": "date_time" },
-        { "field": "file.ctime", "format": "date_time" },
-        { "field": "file.elf.creation_date", "format": "date_time" },
-        { "field": "file.mtime", "format": "date_time" },
-        { "field": "file.x509.not_after", "format": "date_time" },
-        { "field": "file.x509.not_before", "format": "date_time" },
-        { "field": "package.installed", "format": "date_time" },
-        { "field": "process.code_signature.timestamp", "format": "date_time" },
-        { "field": "process.elf.creation_date", "format": "date_time" },
-        { "field": "process.end", "format": "date_time" },
+        {
+          "field": "*",
+          "include_unmapped": "true"
+        },
+        {
+          "field": "@timestamp",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "code_signature.timestamp",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "dll.code_signature.timestamp",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "elf.creation_date",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "event.created",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "event.end",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "event.ingested",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "event.start",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "file.accessed",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "file.code_signature.timestamp",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "file.created",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "file.ctime",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "file.elf.creation_date",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "file.mtime",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "file.x509.not_after",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "file.x509.not_before",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "package.installed",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "process.code_signature.timestamp",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "process.elf.creation_date",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "process.end",
+          "format": "strict_date_optional_time"
+        },
         {
           "field": "process.parent.code_signature.timestamp",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
-        { "field": "process.parent.elf.creation_date", "format": "date_time" },
-        { "field": "process.parent.end", "format": "date_time" },
-        { "field": "process.parent.start", "format": "date_time" },
-        { "field": "process.start", "format": "date_time" },
+        {
+          "field": "process.parent.elf.creation_date",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "process.parent.end",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "process.parent.start",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "process.start",
+          "format": "strict_date_optional_time"
+        },
         {
           "field": "threat.enrichments.indicator.file.accessed",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.file.code_signature.timestamp",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.file.created",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.file.ctime",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.file.elf.creation_date",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.file.mtime",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.file.x509.not_after",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.file.x509.not_before",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.first_seen",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.last_seen",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.modified_at",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.x509.not_after",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.x509.not_before",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
-        { "field": "threat.indicator.file.accessed", "format": "date_time" },
+        {
+          "field": "threat.indicator.file.accessed",
+          "format": "strict_date_optional_time"
+        },
         {
           "field": "threat.indicator.file.code_signature.timestamp",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
-        { "field": "threat.indicator.file.created", "format": "date_time" },
-        { "field": "threat.indicator.file.ctime", "format": "date_time" },
+        {
+          "field": "threat.indicator.file.created",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "threat.indicator.file.ctime",
+          "format": "strict_date_optional_time"
+        },
         {
           "field": "threat.indicator.file.elf.creation_date",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
-        { "field": "threat.indicator.file.mtime", "format": "date_time" },
+        {
+          "field": "threat.indicator.file.mtime",
+          "format": "strict_date_optional_time"
+        },
         {
           "field": "threat.indicator.file.x509.not_after",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.indicator.file.x509.not_before",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
-        { "field": "threat.indicator.first_seen", "format": "date_time" },
-        { "field": "threat.indicator.last_seen", "format": "date_time" },
-        { "field": "threat.indicator.modified_at", "format": "date_time" },
-        { "field": "threat.indicator.x509.not_after", "format": "date_time" },
-        { "field": "threat.indicator.x509.not_before", "format": "date_time" },
-        { "field": "tls.client.not_after", "format": "date_time" },
-        { "field": "tls.client.not_before", "format": "date_time" },
-        { "field": "tls.client.x509.not_after", "format": "date_time" },
-        { "field": "tls.client.x509.not_before", "format": "date_time" },
-        { "field": "tls.server.not_after", "format": "date_time" },
-        { "field": "tls.server.not_before", "format": "date_time" },
-        { "field": "tls.server.x509.not_after", "format": "date_time" },
-        { "field": "tls.server.x509.not_before", "format": "date_time" },
-        { "field": "winlog.time_created", "format": "date_time" },
-        { "field": "x509.not_after", "format": "date_time" },
-        { "field": "x509.not_before", "format": "date_time" }
+        {
+          "field": "threat.indicator.first_seen",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "threat.indicator.last_seen",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "threat.indicator.modified_at",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "threat.indicator.x509.not_after",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "threat.indicator.x509.not_before",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "tls.client.not_after",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "tls.client.not_before",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "tls.client.x509.not_after",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "tls.client.x509.not_before",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "tls.server.not_after",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "tls.server.not_before",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "tls.server.x509.not_after",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "tls.server.x509.not_before",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "winlog.time_created",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "x509.not_after",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "x509.not_before",
+          "format": "strict_date_optional_time"
+        }
       ],
+      "size": 1000,
+      "version": true,
       "script_fields": {},
-      "stored_fields": ["*"],
+      "stored_fields": [
+        "*"
+      ],
       "runtime_mappings": {},
-      "_source": { "excludes": [] },
+      "_source": false,
       "query": {
         "bool": {
           "must": [],
@@ -2885,8 +4157,8 @@
               "range": {
                 "@timestamp": {
                   "format": "strict_date_optional_time",
-                  "gte": "2022-12-01T17:36:44.000Z",
-                  "lte": "2022-12-01T17:37:06.000Z"
+                  "gte": "2022-12-03T01:21:45.715Z",
+                  "lte": "2022-12-03T06:21:45.715Z"
                 }
               }
             }
@@ -2894,6 +4166,18 @@
           "should": [],
           "must_not": []
         }
+      },
+      "highlight": {
+        "pre_tags": [
+          "@kibana-highlighted-field@"
+        ],
+        "post_tags": [
+          "@/kibana-highlighted-field@"
+        ],
+        "fields": {
+          "*": {}
+        },
+        "fragment_size": 2147483647
       }
     }
   },
@@ -2903,139 +4187,277 @@
     "last_gte": "",
     "last-lte": "",
     "query": {
-      "aggs": {
-        "0": {
-          "terms": {
-            "field": "host.hostname.keyword",
-            "order": { "_count": "desc" },
-            "size": 5,
-            "shard_size": 25
+      "track_total_hits": false,
+      "sort": [
+        {
+          "@timestamp": {
+            "order": "desc",
+            "unmapped_type": "boolean"
           }
         }
-      },
-      "size": 0,
+      ],
       "fields": [
-        { "field": "@timestamp", "format": "date_time" },
-        { "field": "code_signature.timestamp", "format": "date_time" },
-        { "field": "dll.code_signature.timestamp", "format": "date_time" },
-        { "field": "elf.creation_date", "format": "date_time" },
-        { "field": "event.created", "format": "date_time" },
-        { "field": "event.end", "format": "date_time" },
-        { "field": "event.ingested", "format": "date_time" },
-        { "field": "event.start", "format": "date_time" },
-        { "field": "file.accessed", "format": "date_time" },
-        { "field": "file.code_signature.timestamp", "format": "date_time" },
-        { "field": "file.created", "format": "date_time" },
-        { "field": "file.ctime", "format": "date_time" },
-        { "field": "file.elf.creation_date", "format": "date_time" },
-        { "field": "file.mtime", "format": "date_time" },
-        { "field": "file.x509.not_after", "format": "date_time" },
-        { "field": "file.x509.not_before", "format": "date_time" },
-        { "field": "package.installed", "format": "date_time" },
-        { "field": "process.code_signature.timestamp", "format": "date_time" },
-        { "field": "process.elf.creation_date", "format": "date_time" },
-        { "field": "process.end", "format": "date_time" },
+        {
+          "field": "*",
+          "include_unmapped": "true"
+        },
+        {
+          "field": "@timestamp",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "code_signature.timestamp",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "dll.code_signature.timestamp",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "elf.creation_date",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "event.created",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "event.end",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "event.ingested",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "event.start",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "file.accessed",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "file.code_signature.timestamp",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "file.created",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "file.ctime",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "file.elf.creation_date",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "file.mtime",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "file.x509.not_after",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "file.x509.not_before",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "package.installed",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "process.code_signature.timestamp",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "process.elf.creation_date",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "process.end",
+          "format": "strict_date_optional_time"
+        },
         {
           "field": "process.parent.code_signature.timestamp",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
-        { "field": "process.parent.elf.creation_date", "format": "date_time" },
-        { "field": "process.parent.end", "format": "date_time" },
-        { "field": "process.parent.start", "format": "date_time" },
-        { "field": "process.start", "format": "date_time" },
+        {
+          "field": "process.parent.elf.creation_date",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "process.parent.end",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "process.parent.start",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "process.start",
+          "format": "strict_date_optional_time"
+        },
         {
           "field": "threat.enrichments.indicator.file.accessed",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.file.code_signature.timestamp",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.file.created",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.file.ctime",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.file.elf.creation_date",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.file.mtime",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.file.x509.not_after",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.file.x509.not_before",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.first_seen",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.last_seen",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.modified_at",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.x509.not_after",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.x509.not_before",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
-        { "field": "threat.indicator.file.accessed", "format": "date_time" },
+        {
+          "field": "threat.indicator.file.accessed",
+          "format": "strict_date_optional_time"
+        },
         {
           "field": "threat.indicator.file.code_signature.timestamp",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
-        { "field": "threat.indicator.file.created", "format": "date_time" },
-        { "field": "threat.indicator.file.ctime", "format": "date_time" },
+        {
+          "field": "threat.indicator.file.created",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "threat.indicator.file.ctime",
+          "format": "strict_date_optional_time"
+        },
         {
           "field": "threat.indicator.file.elf.creation_date",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
-        { "field": "threat.indicator.file.mtime", "format": "date_time" },
+        {
+          "field": "threat.indicator.file.mtime",
+          "format": "strict_date_optional_time"
+        },
         {
           "field": "threat.indicator.file.x509.not_after",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.indicator.file.x509.not_before",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
-        { "field": "threat.indicator.first_seen", "format": "date_time" },
-        { "field": "threat.indicator.last_seen", "format": "date_time" },
-        { "field": "threat.indicator.modified_at", "format": "date_time" },
-        { "field": "threat.indicator.x509.not_after", "format": "date_time" },
-        { "field": "threat.indicator.x509.not_before", "format": "date_time" },
-        { "field": "tls.client.not_after", "format": "date_time" },
-        { "field": "tls.client.not_before", "format": "date_time" },
-        { "field": "tls.client.x509.not_after", "format": "date_time" },
-        { "field": "tls.client.x509.not_before", "format": "date_time" },
-        { "field": "tls.server.not_after", "format": "date_time" },
-        { "field": "tls.server.not_before", "format": "date_time" },
-        { "field": "tls.server.x509.not_after", "format": "date_time" },
-        { "field": "tls.server.x509.not_before", "format": "date_time" },
-        { "field": "winlog.time_created", "format": "date_time" },
-        { "field": "x509.not_after", "format": "date_time" },
-        { "field": "x509.not_before", "format": "date_time" }
+        {
+          "field": "threat.indicator.first_seen",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "threat.indicator.last_seen",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "threat.indicator.modified_at",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "threat.indicator.x509.not_after",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "threat.indicator.x509.not_before",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "tls.client.not_after",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "tls.client.not_before",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "tls.client.x509.not_after",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "tls.client.x509.not_before",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "tls.server.not_after",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "tls.server.not_before",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "tls.server.x509.not_after",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "tls.server.x509.not_before",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "winlog.time_created",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "x509.not_after",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "x509.not_before",
+          "format": "strict_date_optional_time"
+        }
       ],
+      "size": 1000,
+      "version": true,
       "script_fields": {},
-      "stored_fields": ["*"],
+      "stored_fields": [
+        "*"
+      ],
       "runtime_mappings": {},
-      "_source": { "excludes": [] },
+      "_source": false,
       "query": {
         "bool": {
           "must": [],
@@ -3162,8 +4584,8 @@
               "range": {
                 "@timestamp": {
                   "format": "strict_date_optional_time",
-                  "gte": "2022-12-01T17:36:44.000Z",
-                  "lte": "2022-12-01T17:37:06.000Z"
+                  "gte": "2022-12-03T01:22:31.631Z",
+                  "lte": "2022-12-03T06:22:31.631Z"
                 }
               }
             }
@@ -3171,6 +4593,18 @@
           "should": [],
           "must_not": []
         }
+      },
+      "highlight": {
+        "pre_tags": [
+          "@kibana-highlighted-field@"
+        ],
+        "post_tags": [
+          "@/kibana-highlighted-field@"
+        ],
+        "fields": {
+          "*": {}
+        },
+        "fragment_size": 2147483647
       }
     }
   },
@@ -3180,139 +4614,277 @@
     "last_gte": "",
     "last-lte": "",
     "query": {
-      "aggs": {
-        "0": {
-          "terms": {
-            "field": "host.hostname.keyword",
-            "order": { "_count": "desc" },
-            "size": 5,
-            "shard_size": 25
+      "track_total_hits": false,
+      "sort": [
+        {
+          "@timestamp": {
+            "order": "desc",
+            "unmapped_type": "boolean"
           }
         }
-      },
-      "size": 0,
+      ],
       "fields": [
-        { "field": "@timestamp", "format": "date_time" },
-        { "field": "code_signature.timestamp", "format": "date_time" },
-        { "field": "dll.code_signature.timestamp", "format": "date_time" },
-        { "field": "elf.creation_date", "format": "date_time" },
-        { "field": "event.created", "format": "date_time" },
-        { "field": "event.end", "format": "date_time" },
-        { "field": "event.ingested", "format": "date_time" },
-        { "field": "event.start", "format": "date_time" },
-        { "field": "file.accessed", "format": "date_time" },
-        { "field": "file.code_signature.timestamp", "format": "date_time" },
-        { "field": "file.created", "format": "date_time" },
-        { "field": "file.ctime", "format": "date_time" },
-        { "field": "file.elf.creation_date", "format": "date_time" },
-        { "field": "file.mtime", "format": "date_time" },
-        { "field": "file.x509.not_after", "format": "date_time" },
-        { "field": "file.x509.not_before", "format": "date_time" },
-        { "field": "package.installed", "format": "date_time" },
-        { "field": "process.code_signature.timestamp", "format": "date_time" },
-        { "field": "process.elf.creation_date", "format": "date_time" },
-        { "field": "process.end", "format": "date_time" },
+        {
+          "field": "*",
+          "include_unmapped": "true"
+        },
+        {
+          "field": "@timestamp",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "code_signature.timestamp",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "dll.code_signature.timestamp",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "elf.creation_date",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "event.created",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "event.end",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "event.ingested",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "event.start",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "file.accessed",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "file.code_signature.timestamp",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "file.created",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "file.ctime",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "file.elf.creation_date",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "file.mtime",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "file.x509.not_after",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "file.x509.not_before",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "package.installed",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "process.code_signature.timestamp",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "process.elf.creation_date",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "process.end",
+          "format": "strict_date_optional_time"
+        },
         {
           "field": "process.parent.code_signature.timestamp",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
-        { "field": "process.parent.elf.creation_date", "format": "date_time" },
-        { "field": "process.parent.end", "format": "date_time" },
-        { "field": "process.parent.start", "format": "date_time" },
-        { "field": "process.start", "format": "date_time" },
+        {
+          "field": "process.parent.elf.creation_date",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "process.parent.end",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "process.parent.start",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "process.start",
+          "format": "strict_date_optional_time"
+        },
         {
           "field": "threat.enrichments.indicator.file.accessed",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.file.code_signature.timestamp",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.file.created",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.file.ctime",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.file.elf.creation_date",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.file.mtime",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.file.x509.not_after",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.file.x509.not_before",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.first_seen",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.last_seen",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.modified_at",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.x509.not_after",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.x509.not_before",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
-        { "field": "threat.indicator.file.accessed", "format": "date_time" },
+        {
+          "field": "threat.indicator.file.accessed",
+          "format": "strict_date_optional_time"
+        },
         {
           "field": "threat.indicator.file.code_signature.timestamp",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
-        { "field": "threat.indicator.file.created", "format": "date_time" },
-        { "field": "threat.indicator.file.ctime", "format": "date_time" },
+        {
+          "field": "threat.indicator.file.created",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "threat.indicator.file.ctime",
+          "format": "strict_date_optional_time"
+        },
         {
           "field": "threat.indicator.file.elf.creation_date",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
-        { "field": "threat.indicator.file.mtime", "format": "date_time" },
+        {
+          "field": "threat.indicator.file.mtime",
+          "format": "strict_date_optional_time"
+        },
         {
           "field": "threat.indicator.file.x509.not_after",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.indicator.file.x509.not_before",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
-        { "field": "threat.indicator.first_seen", "format": "date_time" },
-        { "field": "threat.indicator.last_seen", "format": "date_time" },
-        { "field": "threat.indicator.modified_at", "format": "date_time" },
-        { "field": "threat.indicator.x509.not_after", "format": "date_time" },
-        { "field": "threat.indicator.x509.not_before", "format": "date_time" },
-        { "field": "tls.client.not_after", "format": "date_time" },
-        { "field": "tls.client.not_before", "format": "date_time" },
-        { "field": "tls.client.x509.not_after", "format": "date_time" },
-        { "field": "tls.client.x509.not_before", "format": "date_time" },
-        { "field": "tls.server.not_after", "format": "date_time" },
-        { "field": "tls.server.not_before", "format": "date_time" },
-        { "field": "tls.server.x509.not_after", "format": "date_time" },
-        { "field": "tls.server.x509.not_before", "format": "date_time" },
-        { "field": "winlog.time_created", "format": "date_time" },
-        { "field": "x509.not_after", "format": "date_time" },
-        { "field": "x509.not_before", "format": "date_time" }
+        {
+          "field": "threat.indicator.first_seen",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "threat.indicator.last_seen",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "threat.indicator.modified_at",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "threat.indicator.x509.not_after",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "threat.indicator.x509.not_before",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "tls.client.not_after",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "tls.client.not_before",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "tls.client.x509.not_after",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "tls.client.x509.not_before",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "tls.server.not_after",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "tls.server.not_before",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "tls.server.x509.not_after",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "tls.server.x509.not_before",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "winlog.time_created",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "x509.not_after",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "x509.not_before",
+          "format": "strict_date_optional_time"
+        }
       ],
+      "size": 1000,
+      "version": true,
       "script_fields": {},
-      "stored_fields": ["*"],
+      "stored_fields": [
+        "*"
+      ],
       "runtime_mappings": {},
-      "_source": { "excludes": [] },
+      "_source": false,
       "query": {
         "bool": {
           "must": [],
@@ -3397,8 +4969,8 @@
               "range": {
                 "@timestamp": {
                   "format": "strict_date_optional_time",
-                  "gte": "2022-12-01T17:36:44.000Z",
-                  "lte": "2022-12-01T17:37:06.000Z"
+                  "gte": "2022-12-03T01:23:15.754Z",
+                  "lte": "2022-12-03T06:23:15.754Z"
                 }
               }
             }
@@ -3406,6 +4978,18 @@
           "should": [],
           "must_not": []
         }
+      },
+      "highlight": {
+        "pre_tags": [
+          "@kibana-highlighted-field@"
+        ],
+        "post_tags": [
+          "@/kibana-highlighted-field@"
+        ],
+        "fields": {
+          "*": {}
+        },
+        "fragment_size": 2147483647
       }
     }
   },
@@ -3415,139 +4999,277 @@
     "last_gte": "",
     "last-lte": "",
     "query": {
-      "aggs": {
-        "0": {
-          "terms": {
-            "field": "host.hostname.keyword",
-            "order": { "_count": "desc" },
-            "size": 10,
-            "shard_size": 25
+      "track_total_hits": false,
+      "sort": [
+        {
+          "@timestamp": {
+            "order": "desc",
+            "unmapped_type": "boolean"
           }
         }
-      },
-      "size": 0,
+      ],
       "fields": [
-        { "field": "@timestamp", "format": "date_time" },
-        { "field": "code_signature.timestamp", "format": "date_time" },
-        { "field": "dll.code_signature.timestamp", "format": "date_time" },
-        { "field": "elf.creation_date", "format": "date_time" },
-        { "field": "event.created", "format": "date_time" },
-        { "field": "event.end", "format": "date_time" },
-        { "field": "event.ingested", "format": "date_time" },
-        { "field": "event.start", "format": "date_time" },
-        { "field": "file.accessed", "format": "date_time" },
-        { "field": "file.code_signature.timestamp", "format": "date_time" },
-        { "field": "file.created", "format": "date_time" },
-        { "field": "file.ctime", "format": "date_time" },
-        { "field": "file.elf.creation_date", "format": "date_time" },
-        { "field": "file.mtime", "format": "date_time" },
-        { "field": "file.x509.not_after", "format": "date_time" },
-        { "field": "file.x509.not_before", "format": "date_time" },
-        { "field": "package.installed", "format": "date_time" },
-        { "field": "process.code_signature.timestamp", "format": "date_time" },
-        { "field": "process.elf.creation_date", "format": "date_time" },
-        { "field": "process.end", "format": "date_time" },
+        {
+          "field": "*",
+          "include_unmapped": "true"
+        },
+        {
+          "field": "@timestamp",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "code_signature.timestamp",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "dll.code_signature.timestamp",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "elf.creation_date",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "event.created",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "event.end",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "event.ingested",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "event.start",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "file.accessed",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "file.code_signature.timestamp",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "file.created",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "file.ctime",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "file.elf.creation_date",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "file.mtime",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "file.x509.not_after",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "file.x509.not_before",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "package.installed",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "process.code_signature.timestamp",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "process.elf.creation_date",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "process.end",
+          "format": "strict_date_optional_time"
+        },
         {
           "field": "process.parent.code_signature.timestamp",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
-        { "field": "process.parent.elf.creation_date", "format": "date_time" },
-        { "field": "process.parent.end", "format": "date_time" },
-        { "field": "process.parent.start", "format": "date_time" },
-        { "field": "process.start", "format": "date_time" },
+        {
+          "field": "process.parent.elf.creation_date",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "process.parent.end",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "process.parent.start",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "process.start",
+          "format": "strict_date_optional_time"
+        },
         {
           "field": "threat.enrichments.indicator.file.accessed",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.file.code_signature.timestamp",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.file.created",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.file.ctime",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.file.elf.creation_date",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.file.mtime",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.file.x509.not_after",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.file.x509.not_before",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.first_seen",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.last_seen",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.modified_at",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.x509.not_after",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.enrichments.indicator.x509.not_before",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
-        { "field": "threat.indicator.file.accessed", "format": "date_time" },
+        {
+          "field": "threat.indicator.file.accessed",
+          "format": "strict_date_optional_time"
+        },
         {
           "field": "threat.indicator.file.code_signature.timestamp",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
-        { "field": "threat.indicator.file.created", "format": "date_time" },
-        { "field": "threat.indicator.file.ctime", "format": "date_time" },
+        {
+          "field": "threat.indicator.file.created",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "threat.indicator.file.ctime",
+          "format": "strict_date_optional_time"
+        },
         {
           "field": "threat.indicator.file.elf.creation_date",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
-        { "field": "threat.indicator.file.mtime", "format": "date_time" },
+        {
+          "field": "threat.indicator.file.mtime",
+          "format": "strict_date_optional_time"
+        },
         {
           "field": "threat.indicator.file.x509.not_after",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
         {
           "field": "threat.indicator.file.x509.not_before",
-          "format": "date_time"
+          "format": "strict_date_optional_time"
         },
-        { "field": "threat.indicator.first_seen", "format": "date_time" },
-        { "field": "threat.indicator.last_seen", "format": "date_time" },
-        { "field": "threat.indicator.modified_at", "format": "date_time" },
-        { "field": "threat.indicator.x509.not_after", "format": "date_time" },
-        { "field": "threat.indicator.x509.not_before", "format": "date_time" },
-        { "field": "tls.client.not_after", "format": "date_time" },
-        { "field": "tls.client.not_before", "format": "date_time" },
-        { "field": "tls.client.x509.not_after", "format": "date_time" },
-        { "field": "tls.client.x509.not_before", "format": "date_time" },
-        { "field": "tls.server.not_after", "format": "date_time" },
-        { "field": "tls.server.not_before", "format": "date_time" },
-        { "field": "tls.server.x509.not_after", "format": "date_time" },
-        { "field": "tls.server.x509.not_before", "format": "date_time" },
-        { "field": "winlog.time_created", "format": "date_time" },
-        { "field": "x509.not_after", "format": "date_time" },
-        { "field": "x509.not_before", "format": "date_time" }
+        {
+          "field": "threat.indicator.first_seen",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "threat.indicator.last_seen",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "threat.indicator.modified_at",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "threat.indicator.x509.not_after",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "threat.indicator.x509.not_before",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "tls.client.not_after",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "tls.client.not_before",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "tls.client.x509.not_after",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "tls.client.x509.not_before",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "tls.server.not_after",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "tls.server.not_before",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "tls.server.x509.not_after",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "tls.server.x509.not_before",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "winlog.time_created",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "x509.not_after",
+          "format": "strict_date_optional_time"
+        },
+        {
+          "field": "x509.not_before",
+          "format": "strict_date_optional_time"
+        }
       ],
+      "size": 1000,
+      "version": true,
       "script_fields": {},
-      "stored_fields": ["*"],
+      "stored_fields": [
+        "*"
+      ],
       "runtime_mappings": {},
-      "_source": { "excludes": [] },
+      "_source": false,
       "query": {
         "bool": {
           "must": [],
@@ -3677,20 +5399,36 @@
                 ]
               }
             },
-            { "match_phrase": { "agent.type": "winlogbeat" } },
             {
               "range": {
                 "@timestamp": {
                   "format": "strict_date_optional_time",
-                  "gte": "2022-12-01T17:36:44.000Z",
-                  "lte": "2022-12-01T17:37:06.000Z"
+                  "gte": "2022-12-03T01:23:57.491Z",
+                  "lte": "2022-12-03T06:23:57.491Z"
                 }
+              }
+            },
+            {
+              "match_phrase": {
+                "agent.type": "winlogbeat"
               }
             }
           ],
           "should": [],
           "must_not": []
         }
+      },
+      "highlight": {
+        "pre_tags": [
+          "@kibana-highlighted-field@"
+        ],
+        "post_tags": [
+          "@/kibana-highlighted-field@"
+        ],
+        "fields": {
+          "*": {}
+        },
+        "fragment_size": 2147483647
       }
     }
   }

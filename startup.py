@@ -37,7 +37,7 @@ async def start_alert():
         try:
             i += 1
             # init query range
-            time_now = datetime.now() + timedelta(hours=7)
+            time_now = datetime.now()
             lte = spec['last-lte']
             # if lte is not set, set it to now. And set gte to now + 1 hour
             if lte == '':
@@ -45,8 +45,7 @@ async def start_alert():
                 lte = format_time(time_now)
             # if lte is set, set gte to lte. lte + 1 hour
             else:
-                last_lte_time = parser.parse(lte) + timedelta(milliseconds=10)
-                gte = format_time(last_lte_time)
+                gte = lte
                 lte = format_time(time_now)
 
             # put lte and gte to query
@@ -59,21 +58,19 @@ async def start_alert():
                 except:
                     pass
             # send request to Elasticsearch
+            with open('query.json', 'w') as f:
+                f.write(json.dumps(query))
             resp = await es.search(**query)
             data = resp['hits']['hits']
             if len(data) > 0:
                 msg_list = []
                 for d in data:
                     fmsg = d['fields']['message'][0]
-                    msg_arr = fmsg.split(' ')
-                    current_dt = parser.parse(msg_arr[0] + ' ' + msg_arr[1])
-                    diff = (time_now - current_dt).total_seconds()/3600
-                    if diff < 36:
-                        if fmsg not in msg_list:
-                            msg_list.append(fmsg)
-                            msg = generateMessage(d, spec['query-name'])
-                            send_message(msg)
-                            time.sleep(5)
+                    if fmsg not in msg_list:
+                        msg_list.append(fmsg)
+                        msg = generateMessage(d, spec['query-name'])
+                        send_message(msg)
+                        time.sleep(5)
 
             # update last-lte
             spec['last-lte'] = lte
