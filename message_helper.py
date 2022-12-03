@@ -34,7 +34,7 @@ def generateMessage(log, atk_type):
         
     if log['_index'] == 'logs-windows':
         msg = log['fields']['message'][0]
-        trg_time = log['fields']['winlog.event_data.UtcTime'][0]
+        trg_time = '-/-'
         ip = log['fields']['host.ip'][0]
         host_name = log['fields']['host.name'][0]
         host_os = f"{log['fields']['host.os.name'][0]} | {log['fields']['host.os.kernel'][0]}"
