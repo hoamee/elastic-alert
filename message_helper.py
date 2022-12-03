@@ -1,5 +1,5 @@
 def generateIISMessage(ip, msg, trg_time, atk_type):
-    message = f'''<b>Phát hiện hành vi tấn công {atk_type} ⚡️</b>
+    message = f'''<b>Phát hiện hành vi nghi ngờ tấn công {atk_type} ⚡️</b>
 
 Host IP: <code>{ip}</code>
 
