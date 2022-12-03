@@ -68,7 +68,7 @@ async def start_alert():
                     fmsg = d['fields']['message'][0]
                     if fmsg not in msg_list:
                         msg_list.append(fmsg)
-                        msg = generateMessage(d, spec['query-name'])
+                        msg = generateMessage(d, spec['query-name'], spec['query-type'])
                         send_message(msg)
                         time.sleep(5)
 

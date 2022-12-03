@@ -1,5 +1,5 @@
 def generateIISMessage(ip, msg, trg_time, atk_type):
-    message = f'''<b>Phát hiện hành vi tấn công {atk_type} trên IIS ⚡️</b>
+    message = f'''<b>Phát hiện hành vi tấn công {atk_type} ⚡️</b>
 
 Host IP: <code>{ip}</code>
 
@@ -10,7 +10,7 @@ Trigger time: <b>{trg_time}</b>'''
     return message
 
 def generateANMMessage(ip, host_name, host_os, image, target_file, user, msg, trg_time, atk_type):
-    message = f'''<b>Phát hiện tiến trình {atk_type} với tham số nghi ngờ trên KSC-CL ở server</b>
+    message = f'''<b>Phát hiện tiến trình {atk_type} với tham số nghi ngờ</b>
 
 Host ip: <code>{ip}</code>
 Host name : <code>{host_name}</code>
@@ -23,16 +23,16 @@ Trigger time: <b>{trg_time}</b>'''
     
     return message
 
-def generateMessage(log, atk_type):
+def generateMessage(log, atk_type, alert_type):
     rmsg = ''
-    if log['_index'] == 'logs-iis':
+    if alert_type == 'web-attack':
         msg = log['fields']['message'][0]
         msg_arr = msg.split(' ')
         trg_time = msg_arr[0] + ' ' + msg_arr[1]
         ip = msg_arr[2]
         rmsg = generateIISMessage(ip, msg, trg_time, atk_type)
         
-    if log['_index'] == 'logs-windows':
+    if alert_type == 'amn':
         msg = log['fields']['message'][0]
         trg_time = '-/-'
         ip = log['fields']['host.ip'][0]
