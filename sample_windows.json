@@ -1,0 +1,146 @@
+{
+  "_index": "logs-windows",
+  "_id": "K4t9zIQBJnkAZzozy1we",
+  "_version": 1,
+  "_score": null,
+  "_ignored": ["message.keyword", "event.original.keyword"],
+  "fields": {
+    "agent.version.keyword": ["8.5.0"],
+    "winlog.event_data.ProcessGuid": ["{75c0411e-50ec-6388-cd66-000000001600}"],
+    "host.name.keyword": ["VPH-DC03.vinhphuc.vn"],
+    "host.hostname": ["VPH-DC03"],
+    "host.mac": ["00-50-56-AE-0E-47"],
+    "winlog.process.pid": [7108],
+    "winlog.event_data.ProcessId.keyword": ["7340"],
+    "host.os.version": ["10.0"],
+    "winlog.event_data.User.keyword": ["NT AUTHORITY\\SYSTEM"],
+    "agent.name": ["VPH-DC03"],
+    "winlog.event_data.UtcTime": ["2022-12-01 07:00:04.364"],
+    "winlog.event_data.Image.keyword": [
+      "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
+    ],
+    "winlog.event_data.TargetFilename.keyword": [
+      "C:\\Windows\\System32\\config\\systemprofile\\AppData\\Local\\Microsoft\\Windows\\PowerShell\\StartupProfileData-NonInteractive"
+    ],
+    "winlog.event_data.RuleName": ["-"],
+    "host.os.type": ["windows"],
+    "agent.id.keyword": ["b4c8e5ac-d044-493b-9057-bec8a2509953"],
+    "winlog.event_data.User": ["NT AUTHORITY\\SYSTEM"],
+    "winlog.event_data.ProcessGuid.keyword": [
+      "{75c0411e-50ec-6388-cd66-000000001600}"
+    ],
+    "tags": ["beats_input_codec_plain_applied", "_grokparsefailure"],
+    "host.architecture": ["x86_64"],
+    "event.provider": ["Microsoft-Windows-Sysmon"],
+    "event.code": ["11"],
+    "agent.id": ["b4c8e5ac-d044-493b-9057-bec8a2509953"],
+    "winlog.provider_name.keyword": ["Microsoft-Windows-Sysmon"],
+    "winlog.event_data.UtcTime.keyword": ["2022-12-01 07:00:04.364"],
+    "winlog.user.domain.keyword": ["NT AUTHORITY"],
+    "winlog.process.thread.id": [6872],
+    "winlog.api.keyword": ["wineventlog"],
+    "tags.keyword": ["beats_input_codec_plain_applied", "_grokparsefailure"],
+    "host.ip": ["10.20.11.17"],
+    "agent.type": ["winlogbeat"],
+    "host.os.kernel.keyword": ["10.0.17763.2803 (WinBuild.160101.0800)"],
+    "winlog.api": ["wineventlog"],
+    "winlog.user.identifier.keyword": ["S-1-5-18"],
+    "winlog.user.type.keyword": ["User"],
+    "event.provider.keyword": ["Microsoft-Windows-Sysmon"],
+    "winlog.event_data.ProcessId": ["7340"],
+    "host.id": ["75c0411e-07ee-436e-bd04-5e18f3d9783c"],
+    "agent.type.keyword": ["winlogbeat"],
+    "agent.ephemeral_id.keyword": ["d97f95ab-7769-48af-96da-89c8afbcfbe3"],
+    "agent.name.keyword": ["VPH-DC03"],
+    "winlog.user.name": ["SYSTEM"],
+    "winlog.event_data.Image": [
+      "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
+    ],
+    "event.action": ["File created (rule: FileCreate)"],
+    "@timestamp": ["2022-12-01T07:00:04.373Z"],
+    "winlog.channel": ["Microsoft-Windows-Sysmon/Operational"],
+    "host.os.platform": ["windows"],
+    "winlog.user.name.keyword": ["SYSTEM"],
+    "winlog.opcode": ["Info"],
+    "agent.ephemeral_id": ["d97f95ab-7769-48af-96da-89c8afbcfbe3"],
+    "winlog.event_id.keyword": ["11"],
+    "host.architecture.keyword": ["x86_64"],
+    "winlog.provider_name": ["Microsoft-Windows-Sysmon"],
+    "winlog.provider_guid": ["{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"],
+    "host.os.build.keyword": ["17763.2803"],
+    "winlog.computer_name": ["VPH-DC03.vinhphuc.vn"],
+    "event.code.keyword": ["11"],
+    "host.ip.keyword": ["10.20.11.17"],
+    "ecs.version.keyword": ["8.0.0"],
+    "winlog.record_id": [57173],
+    "winlog.event_data.RuleName.keyword": ["-"],
+    "event.kind.keyword": ["event"],
+    "host.os.name": ["Windows Server 2019 Datacenter"],
+    "log.level": ["information"],
+    "event.action.keyword": ["File created (rule: FileCreate)"],
+    "host.id.keyword": ["75c0411e-07ee-436e-bd04-5e18f3d9783c"],
+    "host.name": ["VPH-DC03.vinhphuc.vn"],
+    "event.kind": ["event"],
+    "host.os.version.keyword": ["10.0"],
+    "winlog.version": [2],
+    "event.original": [
+      "File created:\nRuleName: -\nUtcTime: 2022-12-01 07:00:04.364\nProcessGuid: {75c0411e-50ec-6388-cd66-000000001600}\nProcessId: 7340\nImage: C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\nTargetFilename: C:\\Windows\\System32\\config\\systemprofile\\AppData\\Local\\Microsoft\\Windows\\PowerShell\\StartupProfileData-NonInteractive\nCreationUtcTime: 2022-04-15 14:28:51.026\nUser: NT AUTHORITY\\SYSTEM"
+    ],
+    "winlog.event_data.TargetFilename": [
+      "C:\\Windows\\System32\\config\\systemprofile\\AppData\\Local\\Microsoft\\Windows\\PowerShell\\StartupProfileData-NonInteractive"
+    ],
+    "@version.keyword": ["1"],
+    "ecs.version": ["8.0.0"],
+    "event.created": ["2022-12-01T07:00:04.656Z"],
+    "host.hostname.keyword": ["VPH-DC03"],
+    "agent.version": ["8.5.0"],
+    "host.os.family": ["windows"],
+    "log.level.keyword": ["information"],
+    "winlog.event_data.CreationUtcTime": ["2022-04-15 14:28:51.026"],
+    "winlog.computer_name.keyword": ["VPH-DC03.vinhphuc.vn"],
+    "winlog.event_data.CreationUtcTime.keyword": ["2022-04-15 14:28:51.026"],
+    "winlog.user.type": ["User"],
+    "host.os.build": ["17763.2803"],
+    "host.os.kernel": ["10.0.17763.2803 (WinBuild.160101.0800)"],
+    "@version": ["1"],
+    "host.os.name.keyword": ["Windows Server 2019 Datacenter"],
+    "winlog.provider_guid.keyword": ["{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"],
+    "winlog.user.identifier": ["S-1-5-18"],
+    "winlog.task": ["File created (rule: FileCreate)"],
+    "winlog.user.domain": ["NT AUTHORITY"],
+    "winlog.task.keyword": ["File created (rule: FileCreate)"],
+    "host.mac.keyword": ["00-50-56-AE-0E-47"],
+    "message": [
+      "File created:\nRuleName: -\nUtcTime: 2022-12-01 07:00:04.364\nProcessGuid: {75c0411e-50ec-6388-cd66-000000001600}\nProcessId: 7340\nImage: C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\nTargetFilename: C:\\Windows\\System32\\config\\systemprofile\\AppData\\Local\\Microsoft\\Windows\\PowerShell\\StartupProfileData-NonInteractive\nCreationUtcTime: 2022-04-15 14:28:51.026\nUser: NT AUTHORITY\\SYSTEM"
+    ],
+    "winlog.event_id": ["11"],
+    "winlog.channel.keyword": ["Microsoft-Windows-Sysmon/Operational"],
+    "host.os.family.keyword": ["windows"],
+    "host.os.type.keyword": ["windows"],
+    "host.os.platform.keyword": ["windows"],
+    "winlog.opcode.keyword": ["Info"]
+  },
+  "ignored_field_values": {
+    "message.keyword": [
+      "File created:\nRuleName: -\nUtcTime: 2022-12-01 07:00:04.364\nProcessGuid: {75c0411e-50ec-6388-cd66-000000001600}\nProcessId: 7340\nImage: C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\nTargetFilename: C:\\Windows\\System32\\config\\systemprofile\\AppData\\Local\\Microsoft\\Windows\\PowerShell\\StartupProfileData-NonInteractive\nCreationUtcTime: 2022-04-15 14:28:51.026\nUser: NT AUTHORITY\\SYSTEM"
+    ],
+    "event.original.keyword": [
+      "File created:\nRuleName: -\nUtcTime: 2022-12-01 07:00:04.364\nProcessGuid: {75c0411e-50ec-6388-cd66-000000001600}\nProcessId: 7340\nImage: C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\nTargetFilename: C:\\Windows\\System32\\config\\systemprofile\\AppData\\Local\\Microsoft\\Windows\\PowerShell\\StartupProfileData-NonInteractive\nCreationUtcTime: 2022-04-15 14:28:51.026\nUser: NT AUTHORITY\\SYSTEM"
+    ]
+  },
+  "highlight": {
+    "agent.type": [
+      "@kibana-highlighted-field@winlogbeat@/kibana-highlighted-field@"
+    ],
+    "event.original": [
+      "File created:\nRuleName: -\nUtcTime: 2022-12-01 07:00:04.364\nProcessGuid: {75c0411e-50ec-6388-cd66-000000001600}\nProcessId: 7340\nImage: C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\nTargetFilename: C:\\Windows\\System32\\config\\systemprofile\\@kibana-highlighted-field@AppData@/kibana-highlighted-field@\\Local\\Microsoft\\Windows\\@kibana-highlighted-field@PowerShell@/kibana-highlighted-field@\\StartupProfileData-NonInteractive\nCreationUtcTime: 2022-04-15 14:28:51.026\nUser: NT AUTHORITY\\SYSTEM"
+    ],
+    "winlog.event_data.TargetFilename": [
+      "C:\\Windows\\System32\\config\\systemprofile\\@kibana-highlighted-field@AppData@/kibana-highlighted-field@\\Local\\Microsoft\\Windows\\@kibana-highlighted-field@PowerShell@/kibana-highlighted-field@\\StartupProfileData-NonInteractive"
+    ],
+    "message": [
+      "File created:\nRuleName: -\nUtcTime: 2022-12-01 07:00:04.364\nProcessGuid: {75c0411e-50ec-6388-cd66-000000001600}\nProcessId: 7340\nImage: C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\nTargetFilename: C:\\Windows\\System32\\config\\systemprofile\\@kibana-highlighted-field@AppData@/kibana-highlighted-field@\\Local\\Microsoft\\Windows\\@kibana-highlighted-field@PowerShell@/kibana-highlighted-field@\\StartupProfileData-NonInteractive\nCreationUtcTime: 2022-04-15 14:28:51.026\nUser: NT AUTHORITY\\SYSTEM"
+    ]
+  },
+  "sort": [1669878004373]
+}
