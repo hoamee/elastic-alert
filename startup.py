@@ -66,8 +66,8 @@ async def start_alert():
                 msg_list = []
                 for d in data:
                     fmsg = d['fields']['message'][0]
-                    fmsg = fmsg.replace('<', '[<]')
-                    fmsg = fmsg.replace('>', '[>]')
+                    fmsg = fmsg.replace('<', '_')
+                    fmsg = fmsg.replace('>', '_')
                     if fmsg not in msg_list:
                         msg_list.append(fmsg)
                         msg = generateMessage(d, spec['query-name'], spec['query-type'])
