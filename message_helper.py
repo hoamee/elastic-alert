@@ -42,16 +42,42 @@ def generateMessage(log, atk_type, alert_type):
     if alert_type == 'anm':
         msg = log['fields']['message'][0]
         trg_time = '-/-'
+        ip = '-/-'
+        host_name = '-/-'
+        host_os = '-/-'
+        image = '-/-'
+        target_file = '-/-'
+        user = '-/-'
+        
         try:
-            trg_time = log['fields']['winlog.event_data.UtcTime'][0]
+            trg_time = log['fields']['winlog.event_data.UtcTime'][0]          
         except:
             pass
-        ip = log['fields']['host.ip'][0]
-        host_name = log['fields']['host.name'][0]
-        host_os = f"{log['fields']['host.os.name'][0]} | {log['fields']['host.os.kernel'][0]}"
-        image = log['fields']['winlog.event_data.Image'][0]
-        target_file = log['fields']['winlog.event_data.TargetFilename'][0]
-        user = log['fields']['winlog.event_data.User'][0]
+        try:
+            user = log['fields']['winlog.event_data.User'][0]
+        except:
+            pass
+        try:
+            host_name = log['fields']['host.name'][0]
+        except:
+            pass
+        try:
+            host_os = f"{log['fields']['host.os.name'][0]} | {log['fields']['host.os.kernel'][0]}"
+        except:
+            pass
+        try:
+            ip = log['fields']['host.ip'][0]
+        except:
+            pass
+        try:            
+            image = log['fields']['winlog.event_data.Image'][0]
+        except:
+            pass
+        try:
+            target_file = log['fields']['winlog.event_data.TargetFilename'][0]  
+        except:
+            pass
+        
         rmsg = generateANMMessage(ip, host_name, host_os, image, target_file, user, msg, trg_time, atk_type)
         
     return rmsg
