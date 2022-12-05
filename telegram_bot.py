@@ -7,7 +7,7 @@ def postMessage(chat_id, message):
                   data={'chat_id': chat_id, 'text': message, 'parse_mode': 'HTML'})
     if(rq.status_code != 200):
         send_error(rq.text)
-        send_error(message)
+        print(message)
 
 def send_message(message):
     postMessage('-672756243', message)

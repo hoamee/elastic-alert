@@ -67,7 +67,7 @@ async def start_alert():
                         msg_list.append(fmsg)
                         msg = generateMessage(d, spec['query-name'], spec['query-type'])
                         
-                        if len(msg) > 4096:
+                        if len(msg) >= 4096:
                             msg1 = msg[:4090] + '...'
                             msg2 = '...' + msg[4090:]
                             send_message(msg1)
