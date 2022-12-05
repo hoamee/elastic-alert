@@ -7,7 +7,6 @@ from message_helper import generateMessage
 from telegram_bot import send_error, send_message
 import time
 from datetime import datetime, timedelta
-from dateutil import parser
 
 elastic_url = sys.argv[1]  # URL to Elasticsearch
 # elastic_usr = sys.argv[2] # Elasticsearch Username
@@ -37,7 +36,7 @@ async def start_alert():
         try:
             i += 1
             # init query range
-            time_now = datetime.now() - timedelta(hours=4)
+            time_now = datetime.now() - timedelta(minutes=3)
             lte = spec['last-lte']
             # if lte is not set, set it to now. And set gte to now + 1 hour
             if lte == '':
@@ -78,7 +77,7 @@ async def start_alert():
             # update spec file
             with open('es-query.json', 'w') as f:
                 json.dump(spec_list, f)
-        except Exception as e:
+        except:
             send_error('[So TTTT VP] Error: ' + str(traceback.format_exc()))
     end = time.time()
     # return elapsed time

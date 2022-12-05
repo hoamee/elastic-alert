@@ -9,7 +9,7 @@ Host IP: <code>{ip}</code>
 
 Log detail: <code>{msg}</code>
 
-Trigger time: <b>{trg_time} UTC±00:00</b>'''
+Trigger time: <code>{trg_time} UTC±00:00</code>'''
     
     return message
 
@@ -26,7 +26,7 @@ Image : <code>{image}</code>
 Target file name: <code>{target_file}</code>
 
 Log detail: <code>{msg}</code>
-Trigger time: <b>{trg_time} UTC±00:00</b>'''
+Trigger time: <code>{trg_time} UTC±00:00</code>'''
     
     return message
 
@@ -41,7 +41,11 @@ def generateMessage(log, atk_type, alert_type):
         
     if alert_type == 'anm':
         msg = log['fields']['message'][0]
-        trg_time = log['fields']['winlog.event_data.UtcTime'][0]
+        trg_time = '-/-'
+        try:
+            trg_time = log['fields']['winlog.event_data.UtcTime'][0]
+        except:
+            pass
         ip = log['fields']['host.ip'][0]
         host_name = log['fields']['host.name'][0]
         host_os = f"{log['fields']['host.os.name'][0]} | {log['fields']['host.os.kernel'][0]}"
