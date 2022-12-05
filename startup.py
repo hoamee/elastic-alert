@@ -66,7 +66,14 @@ async def start_alert():
                     if fmsg not in msg_list:
                         msg_list.append(fmsg)
                         msg = generateMessage(d, spec['query-name'], spec['query-type'])
-                        send_message(msg)
+                        
+                        if len(msg) > 4096:
+                            msg1 = msg[:4090] + '...'
+                            msg2 = '...' + msg[4090:]
+                            send_message(msg1)
+                            time.sleep(3)
+                            send_message(msg2)
+                        
                         time.sleep(5)
 
             # update last-lte
