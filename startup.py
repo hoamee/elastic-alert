@@ -57,8 +57,6 @@ async def start_alert():
                 except:
                     pass
             # send request to Elasticsearch
-            with open('query.json', 'w') as f:
-                f.write(json.dumps(query))
             resp = await es.search(**query)
             data = resp['hits']['hits']
             if len(data) > 0:
