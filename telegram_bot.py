@@ -1,17 +1,23 @@
 import requests
-from datetime import datetime
+from message_helper import resolveMessage
 # -672756243
-def send_message(message):
+
+def postMessage(chat_id, message):
     rq = requests.post('https://api.telegram.org/bot5942148992:AAFuDPwGt9ARdxHlyOuhQT0X3qBRdaDNJ-0/sendMessage', 
-                  data={'chat_id': '607758592', 'text': message, 'parse_mode': 'HTML'})
+                  data={'chat_id': chat_id, 'text': message, 'parse_mode': 'HTML'})
     if(rq.status_code != 200):
         print(rq.text)
         print('-----------------')
+        print(message)
+
+def send_message(message):
+    postMessage('607758592', message)
+   
     
 def send_error(message):
-    rq_prefix='https://api.telegram.org/bot5942148992:AAFuDPwGt9ARdxHlyOuhQT0X3qBRdaDNJ-0/sendmessage?chat_id=607758592&parse_mode=HTML&text='
-    rq_prefix += message
-    rq = requests.get(rq_prefix)
+    resolveMessage(message)
+    postMessage('607758592', message)
+
 
 # sample MarkdownV2 text
 # *bold \*text*
