@@ -39,7 +39,7 @@ def generateMessage(log, atk_type, alert_type):
         ip = msg_arr[2]
         rmsg = generateIISMessage(ip, msg, trg_time, atk_type)
         
-    if alert_type == 'amn':
+    if alert_type == 'anm':
         msg = log['fields']['message'][0]
         trg_time = '-/-'
         ip = log['fields']['host.ip'][0]
