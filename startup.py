@@ -7,7 +7,7 @@ from message_helper import generateMessage
 from telegram_bot import send_error, send_message, send_file
 import time
 from datetime import datetime, timedelta
-import uuid
+import os
 
 elastic_url = sys.argv[1]  # URL to Elasticsearch
 # elastic_usr = sys.argv[2] # Elasticsearch Username
@@ -70,7 +70,7 @@ async def start_alert():
                         file_name = ''
                         
                         if len(fmsg) >= 3000:
-                            file_name = f"log_{str(time_now)}.txt"
+                            file_name = f"log_{format_time(time_now)}.txt"
                             d['fields']['message'][0] = f'Please check attachment bellow for full message ({file_name})'
                             with open(file_name, 'w') as f:
                                 f.write(fmsg)                            
@@ -79,6 +79,7 @@ async def start_alert():
                         send_message(msg)
                         if(file_name != ''):
                             send_file(file_name)
+                            os.remove(file_name)
                         time.sleep(5)
 
             # update last-lte
