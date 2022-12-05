@@ -65,10 +65,12 @@ async def start_alert():
             if len(data) > 0:
                 msg_list = []
                 for d in data:
-                    print(d)
                     fmsg = d['fields']['message'][0]
+                    print(fmsg)
+                    print('----------------')
                     if fmsg not in msg_list:
                         msg_list.append(fmsg)
+                        print(f'list length: {len(msg_list)}')
                         msg = generateMessage(d, spec['query-name'], spec['query-type'])
                         send_message(msg)
                         time.sleep(5)
