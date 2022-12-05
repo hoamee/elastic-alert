@@ -57,16 +57,15 @@ async def start_alert():
                     break
                 except:
                     pass
-            print(f"gte: {q['range']['@timestamp']['gte']}, lte: {q['range']['@timestamp']['lte']}")
             # send request to Elasticsearch
             with open('query.json', 'w') as f:
                 f.write(json.dumps(query))
             resp = await es.search(**query)
-            print(resp)
             data = resp['hits']['hits']
             if len(data) > 0:
                 msg_list = []
                 for d in data:
+                    print(d)
                     fmsg = d['fields']['message'][0]
                     if fmsg not in msg_list:
                         msg_list.append(fmsg)
