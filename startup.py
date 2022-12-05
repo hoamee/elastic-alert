@@ -37,11 +37,11 @@ async def start_alert():
         try:
             i += 1
             # init query range
-            time_now = datetime.now()
+            time_now = datetime.now() - timedelta(minutes=2)
             lte = spec['last-lte']
             # if lte is not set, set it to now. And set gte to now + 1 hour
             if lte == '':
-                gte = format_time(time_now - timedelta(hours=1))
+                gte = format_time(time_now - timedelta(hours=2))
                 lte = format_time(time_now)
             # if lte is set, set gte to lte. lte + 1 hour
             else:
