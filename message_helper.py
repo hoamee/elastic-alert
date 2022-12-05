@@ -41,7 +41,7 @@ def generateMessage(log, atk_type, alert_type):
         
     if alert_type == 'anm':
         msg = log['fields']['message'][0]
-        trg_time = '-/-'
+        trg_time = log['fields']['winlog.event_data.UtcTime'][0]
         ip = log['fields']['host.ip'][0]
         host_name = log['fields']['host.name'][0]
         host_os = f"{log['fields']['host.os.name'][0]} | {log['fields']['host.os.kernel'][0]}"
