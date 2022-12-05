@@ -1,5 +1,5 @@
 def resolveCodeMd(msg):
-    msg = msg.replace('`', '\`').replace('\\', '\\\\')
+    msg = msg.replace('`', '\`').replace('\\', '\\\\').replace('+', '\+')
 
 def generateIISMessage(ip, msg, trg_time, atk_type):
     msg= resolveCodeMd(msg)
