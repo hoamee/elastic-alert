@@ -2,7 +2,7 @@ import requests
 from datetime import datetime
 
 def send_message(message):
-    rq_prefix='https://api.telegram.org/bot5942148992:AAFuDPwGt9ARdxHlyOuhQT0X3qBRdaDNJ-0/sendmessage?chat_id=-672756243&parse_mode=HTML&text='
+    rq_prefix='https://api.telegram.org/bot5942148992:AAFuDPwGt9ARdxHlyOuhQT0X3qBRdaDNJ-0/sendmessage?chat_id=-672756243&parse_mode=MarkdownV2&text='
     rq_prefix += message
     rq = requests.get(rq_prefix)
     if(rq.status_code != 200):
@@ -11,7 +11,7 @@ def send_message(message):
         print(rq_prefix)
     
 def send_error(message):
-    rq_prefix='https://api.telegram.org/bot5942148992:AAFuDPwGt9ARdxHlyOuhQT0X3qBRdaDNJ-0/sendmessage?chat_id=607758592&parse_mode=HTML&text='
+    rq_prefix='https://api.telegram.org/bot5942148992:AAFuDPwGt9ARdxHlyOuhQT0X3qBRdaDNJ-0/sendmessage?chat_id=607758592&parse_mode=MarkdownV2&text='
     rq_prefix += message
     rq = requests.get(rq_prefix)
 
