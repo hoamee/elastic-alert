@@ -609,9 +609,7 @@
       "size": 1000,
       "version": true,
       "script_fields": {},
-      "stored_fields": [
-        "*"
-      ],
+      "stored_fields": ["*"],
       "runtime_mappings": {},
       "_source": false,
       "query": {
@@ -719,12 +717,8 @@
         }
       },
       "highlight": {
-        "pre_tags": [
-          "@kibana-highlighted-field@"
-        ],
-        "post_tags": [
-          "@/kibana-highlighted-field@"
-        ],
+        "pre_tags": ["@kibana-highlighted-field@"],
+        "post_tags": ["@/kibana-highlighted-field@"],
         "fields": {
           "*": {}
         },
@@ -1004,9 +998,7 @@
       "size": 1000,
       "version": true,
       "script_fields": {},
-      "stored_fields": [
-        "*"
-      ],
+      "stored_fields": ["*"],
       "runtime_mappings": {},
       "_source": false,
       "query": {
@@ -1048,12 +1040,8 @@
         }
       },
       "highlight": {
-        "pre_tags": [
-          "@kibana-highlighted-field@"
-        ],
-        "post_tags": [
-          "@/kibana-highlighted-field@"
-        ],
+        "pre_tags": ["@kibana-highlighted-field@"],
+        "post_tags": ["@/kibana-highlighted-field@"],
         "fields": {
           "*": {}
         },
@@ -1333,9 +1321,7 @@
       "size": 1000,
       "version": true,
       "script_fields": {},
-      "stored_fields": [
-        "*"
-      ],
+      "stored_fields": ["*"],
       "runtime_mappings": {},
       "_source": false,
       "query": {
@@ -1454,12 +1440,8 @@
         }
       },
       "highlight": {
-        "pre_tags": [
-          "@kibana-highlighted-field@"
-        ],
-        "post_tags": [
-          "@/kibana-highlighted-field@"
-        ],
+        "pre_tags": ["@kibana-highlighted-field@"],
+        "post_tags": ["@/kibana-highlighted-field@"],
         "fields": {
           "*": {}
         },
@@ -1739,9 +1721,7 @@
       "size": 1000,
       "version": true,
       "script_fields": {},
-      "stored_fields": [
-        "*"
-      ],
+      "stored_fields": ["*"],
       "runtime_mappings": {},
       "_source": false,
       "query": {
@@ -1879,12 +1859,8 @@
         }
       },
       "highlight": {
-        "pre_tags": [
-          "@kibana-highlighted-field@"
-        ],
-        "post_tags": [
-          "@/kibana-highlighted-field@"
-        ],
+        "pre_tags": ["@kibana-highlighted-field@"],
+        "post_tags": ["@/kibana-highlighted-field@"],
         "fields": {
           "*": {}
         },
@@ -2164,9 +2140,7 @@
       "size": 1000,
       "version": true,
       "script_fields": {},
-      "stored_fields": [
-        "*"
-      ],
+      "stored_fields": ["*"],
       "runtime_mappings": {},
       "_source": false,
       "query": {
@@ -2281,8 +2255,8 @@
               "range": {
                 "@timestamp": {
                   "format": "strict_date_optional_time",
-                  "gte": "2022-12-03T01:18:11.834Z",
-                  "lte": "2022-12-03T06:18:11.834Z"
+                  "gte": "2022-12-05T09:38:52.467Z",
+                  "lte": "2022-12-05T14:38:52.467Z"
                 }
               }
             },
@@ -2297,12 +2271,8 @@
         }
       },
       "highlight": {
-        "pre_tags": [
-          "@kibana-highlighted-field@"
-        ],
-        "post_tags": [
-          "@/kibana-highlighted-field@"
-        ],
+        "pre_tags": ["@kibana-highlighted-field@"],
+        "post_tags": ["@/kibana-highlighted-field@"],
         "fields": {
           "*": {}
         },
@@ -2582,9 +2552,7 @@
       "size": 1000,
       "version": true,
       "script_fields": {},
-      "stored_fields": [
-        "*"
-      ],
+      "stored_fields": ["*"],
       "runtime_mappings": {},
       "_source": false,
       "query": {
@@ -2689,12 +2657,8 @@
         }
       },
       "highlight": {
-        "pre_tags": [
-          "@kibana-highlighted-field@"
-        ],
-        "post_tags": [
-          "@/kibana-highlighted-field@"
-        ],
+        "pre_tags": ["@kibana-highlighted-field@"],
+        "post_tags": ["@/kibana-highlighted-field@"],
         "fields": {
           "*": {}
         },
@@ -2974,9 +2938,7 @@
       "size": 1000,
       "version": true,
       "script_fields": {},
-      "stored_fields": [
-        "*"
-      ],
+      "stored_fields": ["*"],
       "runtime_mappings": {},
       "_source": false,
       "query": {
@@ -3107,12 +3069,8 @@
         }
       },
       "highlight": {
-        "pre_tags": [
-          "@kibana-highlighted-field@"
-        ],
-        "post_tags": [
-          "@/kibana-highlighted-field@"
-        ],
+        "pre_tags": ["@kibana-highlighted-field@"],
+        "post_tags": ["@/kibana-highlighted-field@"],
         "fields": {
           "*": {}
         },
@@ -3392,9 +3350,7 @@
       "size": 1000,
       "version": true,
       "script_fields": {},
-      "stored_fields": [
-        "*"
-      ],
+      "stored_fields": ["*"],
       "runtime_mappings": {},
       "_source": false,
       "query": {
@@ -3643,12 +3599,8 @@
         }
       },
       "highlight": {
-        "pre_tags": [
-          "@kibana-highlighted-field@"
-        ],
-        "post_tags": [
-          "@/kibana-highlighted-field@"
-        ],
+        "pre_tags": ["@kibana-highlighted-field@"],
+        "post_tags": ["@/kibana-highlighted-field@"],
         "fields": {
           "*": {}
         },
@@ -3928,9 +3880,7 @@
       "size": 1000,
       "version": true,
       "script_fields": {},
-      "stored_fields": [
-        "*"
-      ],
+      "stored_fields": ["*"],
       "runtime_mappings": {},
       "_source": false,
       "query": {
@@ -4168,12 +4118,8 @@
         }
       },
       "highlight": {
-        "pre_tags": [
-          "@kibana-highlighted-field@"
-        ],
-        "post_tags": [
-          "@/kibana-highlighted-field@"
-        ],
+        "pre_tags": ["@kibana-highlighted-field@"],
+        "post_tags": ["@/kibana-highlighted-field@"],
         "fields": {
           "*": {}
         },
@@ -4453,9 +4399,7 @@
       "size": 1000,
       "version": true,
       "script_fields": {},
-      "stored_fields": [
-        "*"
-      ],
+      "stored_fields": ["*"],
       "runtime_mappings": {},
       "_source": false,
       "query": {
@@ -4595,12 +4539,8 @@
         }
       },
       "highlight": {
-        "pre_tags": [
-          "@kibana-highlighted-field@"
-        ],
-        "post_tags": [
-          "@/kibana-highlighted-field@"
-        ],
+        "pre_tags": ["@kibana-highlighted-field@"],
+        "post_tags": ["@/kibana-highlighted-field@"],
         "fields": {
           "*": {}
         },
@@ -4880,9 +4820,7 @@
       "size": 1000,
       "version": true,
       "script_fields": {},
-      "stored_fields": [
-        "*"
-      ],
+      "stored_fields": ["*"],
       "runtime_mappings": {},
       "_source": false,
       "query": {
@@ -4980,12 +4918,8 @@
         }
       },
       "highlight": {
-        "pre_tags": [
-          "@kibana-highlighted-field@"
-        ],
-        "post_tags": [
-          "@/kibana-highlighted-field@"
-        ],
+        "pre_tags": ["@kibana-highlighted-field@"],
+        "post_tags": ["@/kibana-highlighted-field@"],
         "fields": {
           "*": {}
         },
@@ -5265,9 +5199,7 @@
       "size": 1000,
       "version": true,
       "script_fields": {},
-      "stored_fields": [
-        "*"
-      ],
+      "stored_fields": ["*"],
       "runtime_mappings": {},
       "_source": false,
       "query": {
@@ -5419,12 +5351,8 @@
         }
       },
       "highlight": {
-        "pre_tags": [
-          "@kibana-highlighted-field@"
-        ],
-        "post_tags": [
-          "@/kibana-highlighted-field@"
-        ],
+        "pre_tags": ["@kibana-highlighted-field@"],
+        "post_tags": ["@/kibana-highlighted-field@"],
         "fields": {
           "*": {}
         },

@@ -9,7 +9,7 @@ Host IP: <code>{ip}</code>
 
 Log detail: <code>{msg}</code>
 
-Trigger time: <b>{trg_time}</b> UTC±00:00'''
+Trigger time: <b>{trg_time} UTC±00:00</b>'''
     
     return message
 
