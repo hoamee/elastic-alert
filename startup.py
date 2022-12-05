@@ -66,8 +66,7 @@ async def start_alert():
                 msg_list = []
                 for d in data:
                     fmsg = d['fields']['message'][0]
-                    print(fmsg)
-                    print('----------------')
+                    fmsg = fmsg.replace('\\', '\\\\')
                     if fmsg not in msg_list:
                         msg_list.append(fmsg)
                         print(f'list length: {len(msg_list)}')
