@@ -1,27 +1,28 @@
 def generateIISMessage(ip, msg, trg_time, atk_type):
     fmsg = msg.replace('<', '*').replace('>', '*')
-    message = f'''<b>Phát hiện hành vi nghi ngờ tấn công {atk_type} ⚡️</b>
-
-Host IP: <code>{ip}</code>
-
-Log detail: <code>{fmsg}</code>
-
-Trigger time: <b>{trg_time}</b>'''
+    message = f'''```
+Phát hiện hành vi nghi ngờ tấn công {atk_type} ⚡️
+Host IP: {ip}
+Log detail:{fmsg}
+Trigger time: {trg_time}
+```'''
     
     return message
 
 def generateANMMessage(ip, host_name, host_os, image, target_file, user, msg, trg_time, atk_type):
     fmsg = msg.replace('<', '*').replace('>', '*')
-    message = f'''<b>Phát hiện tiến trình {atk_type} với tham số nghi ngờ</b>
+    message = f'''```
+Phát hiện tiến trình {atk_type} với tham số nghi ngờ
 
-Host ip: <code>{ip}</code>
-Host name : <code>{host_name}</code>
-Host os: <code>{host_os}</code>
-Image : <code>{image}</code>
-Target file name: <code>{target_file}</code>
-User: <code>{user}</code>
-Log detail: <code>{fmsg}</code>
-Trigger time: <b>{trg_time}</b>'''
+Host ip: {ip}
+Host name : {host_name}
+Host os: {host_os}
+Image : {image}
+Target file name: {target_file}
+User: {user}
+Log detail: {fmsg}
+Trigger time: {trg_time}
+```'''
     
     return message
 
