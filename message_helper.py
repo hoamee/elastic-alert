@@ -53,26 +53,32 @@ def generateMessage(log, atk_type, alert_type):
             trg_time = log['fields']['winlog.event_data.UtcTime'][0]          
         except:
             pass
+        
         try:
             user = log['fields']['winlog.event_data.User'][0]
         except:
             pass
+        
         try:
             host_name = log['fields']['host.name'][0]
         except:
             pass
+        
         try:
             host_os = f"{log['fields']['host.os.name'][0]} | {log['fields']['host.os.kernel'][0]}"
         except:
             pass
+        
         try:
             ip = log['fields']['host.ip'][0]
         except:
             pass
+        
         try:            
             image = log['fields']['winlog.event_data.Image'][0]
         except:
             pass
+        
         try:
             target_file = log['fields']['winlog.event_data.TargetFilename'][0]  
         except:
@@ -82,17 +88,4 @@ def generateMessage(log, atk_type, alert_type):
         
     return rmsg
 
-
-# HTML Sample
-# <b>bold</b>, <strong>bold</strong>
-# <i>italic</i>, <em>italic</em>
-# <u>underline</u>, <ins>underline</ins>
-# <s>strikethrough</s>, <strike>strikethrough</strike>, <del>strikethrough</del>
-# <span class="tg-spoiler">spoiler</span>, <tg-spoiler>spoiler</tg-spoiler>
-# <b>bold <i>italic bold <s>italic bold strikethrough <span class="tg-spoiler">italic bold strikethrough spoiler</span></s> <u>underline italic bold</u></i> bold</b>
-# <a href="http://www.example.com/">inline URL</a>
-# <a href="tg://user?id=123456789">inline mention of a user</a>
-# <code>inline fixed-width code</code>
-# <pre>pre-formatted fixed-width code block</pre>
-# <pre><code class="language-python">pre-formatted fixed-width code block written in the Python programming language</code></pre>
 

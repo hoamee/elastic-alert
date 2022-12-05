@@ -10,13 +10,26 @@ def postMessage(chat_id, message):
         print(message)
 
 def send_message(message):
-    postMessage('-672756243', message)
+    # postMessage('-672756243', message)
+    postMessage('607758592', message)
    
     
 def send_error(message):
     resolveMessage(message)
     postMessage('607758592', message)
 
+def send_file(file_name):
+    url = 'https://api.telegram.org/bot5942148992:AAFuDPwGt9ARdxHlyOuhQT0X3qBRdaDNJ-0/sendDocument'
+    data={'chat_id': '607758592', 'parse_mode': 'HTML', 'caption': file_name}
+    headers = {
+        'Content-Type': 'multipart/form-data',
+    }
+    # Need to pass the document field in the files dict
+    files = {
+        'document': open(file_name, 'rb')
+    }
+
+    r = requests.post(url=url, data=data, files=files, stream=True)
 
 # sample MarkdownV2 text
 # *bold \*text*

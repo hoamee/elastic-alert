@@ -4,9 +4,10 @@ from elasticsearch import AsyncElasticsearch
 import sys
 import json
 from message_helper import generateMessage
-from telegram_bot import send_error, send_message
+from telegram_bot import send_error, send_message, send_file
 import time
 from datetime import datetime, timedelta
+import uuid
 
 elastic_url = sys.argv[1]  # URL to Elasticsearch
 # elastic_usr = sys.argv[2] # Elasticsearch Username
@@ -65,15 +66,19 @@ async def start_alert():
                     fmsg = d['fields']['message'][0]
                     if fmsg not in msg_list:
                         msg_list.append(fmsg)
+                        msg = ''
+                        file_name = ''
+                        
+                        if len(fmsg) >= 3000:
+                            file_name = f"log_{str(time_now)}.txt"
+                            d['fields']['message'][0] = f'Please check attachment bellow for full message ({file_name})'
+                            with open(file_name, 'w') as f:
+                                f.write(fmsg)                            
+                            
                         msg = generateMessage(d, spec['query-name'], spec['query-type'])
-                        
-                        if len(msg) >= 4096:
-                            msg1 = msg[:4090] + '...'
-                            msg2 = '...' + msg[4090:]
-                            send_message(msg1)
-                            time.sleep(3)
-                            send_message(msg2)
-                        
+                        send_message(msg)
+                        if(file_name != ''):
+                            send_file(file_name)
                         time.sleep(5)
 
             # update last-lte
