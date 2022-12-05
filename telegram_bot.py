@@ -1,13 +1,13 @@
 import requests
 from datetime import datetime
-
+# -672756243
 def send_message(message):
-    rq_prefix='https://api.telegram.org/bot5942148992:AAFuDPwGt9ARdxHlyOuhQT0X3qBRdaDNJ-0/sendmessage?chat_id=-672756243&parse_mode=MarkdownV2&text='
+    rq_prefix='https://api.telegram.org/bot5942148992:AAFuDPwGt9ARdxHlyOuhQT0X3qBRdaDNJ-0/sendmessage?chat_id=607758592&parse_mode=MarkdownV2&text='
     rq_prefix += message
     rq = requests.get(rq_prefix)
     if(rq.status_code != 200):
-        send_error('[So TTTT VP] Error: ' + str(rq.text))
         print(rq.text)
+        print('-----------------')
         print(rq_prefix)
     
 def send_error(message):

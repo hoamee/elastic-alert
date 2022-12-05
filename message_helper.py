@@ -1,4 +1,8 @@
+def resolveCodeMd(msg):
+    msg = msg.replace('`', '\`').replace('\\', '\\\\')
+
 def generateIISMessage(ip, msg, trg_time, atk_type):
+    msg= resolveCodeMd(msg)
     message = f'''
 Phát hiện hành vi nghi ngờ tấn công {atk_type} ⚡️
 
@@ -10,7 +14,7 @@ Trigger time: `{trg_time} UTC +000`
     return message
 
 def generateANMMessage(ip, host_name, host_os, image, target_file, user, msg, trg_time, atk_type):
-    
+    msg= resolveCodeMd(msg)
     message = f'''
 Phát hiện tiến trình {atk_type} với tham số nghi ngờ
 
