@@ -30,23 +30,27 @@ def format_time(dt: datetime):
 
 async def start_alert():
     start = time.time()
+    os.system("curl https://raw.githubusercontent.com/hoamee/elastic-alert/main/es-query.json --output es-query.json")
     # Load spec from file
     i = 0
     spec_list = json.load(open('es-query.json', 'r'))
+    time_now = datetime.now() - timedelta(minutes=3)
+    time_now_str = format_time(time_now)
+    config = json.load(open('config.json', 'r'))
+    
     for spec in spec_list:
         try:
             i += 1
             # init query range
-            time_now = datetime.now() - timedelta(minutes=3)
-            lte = spec['last-lte']
+            last_lte = config['last-lte']
             # if lte is not set, set it to now. And set gte to now + 1 hour
-            if lte == '':
+            if last_lte == '':
                 gte = format_time(time_now - timedelta(hours=2))
-                lte = format_time(time_now)
             # if lte is set, set gte to lte. lte + 1 hour
             else:
-                gte = lte
-                lte = format_time(time_now)
+                gte = last_lte
+            
+            lte = time_now_str
 
             # put lte and gte to query
             query = spec['query']
@@ -70,7 +74,7 @@ async def start_alert():
                         file_name = ''
                         
                         if len(fmsg) >= 3000:
-                            file_name = f"log_{format_time(time_now)}.txt"
+                            file_name = f"log_{time_now_str}_{str(i)}.txt"
                             d['fields']['message'][0] = f'Please check attachment bellow for full message ({file_name})'
                             with open(file_name, 'w') as f:
                                 f.write(fmsg)                            
@@ -81,15 +85,13 @@ async def start_alert():
                             send_file(file_name)
                             os.remove(file_name)
                         time.sleep(5)
-
-            # update last-lte
-            spec['last-lte'] = lte
-
-            # update spec file
-            with open('es-query.json', 'w') as f:
-                json.dump(spec_list, f)
+            # save lte to config
+            config['last-lte'] = lte
+            with open('config.json', 'w') as f:
+                    json.dump(spec_list, f)
         except:
             send_error('[So TTTT VP] Error: ' + str(traceback.format_exc()))
+        
     end = time.time()
     # return elapsed time
     return f'done in {end-start} seconds. {i} requests sent'
