@@ -88,7 +88,7 @@ async def start_alert():
             # save lte to config
             config['last-lte'] = lte
             with open('config.json', 'w') as f:
-                    json.dump(spec_list, f)
+                    json.dump(config, f)
         except:
             send_error('[So TTTT VP] Error: ' + str(traceback.format_exc()))
         
