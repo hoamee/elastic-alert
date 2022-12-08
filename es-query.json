@@ -2372,6 +2372,17 @@
                         }
                       }
                     }
+                  },
+                  {
+                    "bool": {
+                      "must_not": {
+                        "multi_match": {
+                          "type": "phrase",
+                          "query": "\\PowerShell\\StartupProfileData-NonInteractive",
+                          "lenient": true
+                        }
+                      }
+                    }
                   }
                 ]
               }
