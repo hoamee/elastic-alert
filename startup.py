@@ -69,8 +69,19 @@ async def start_alert():
                 msg_list = []
                 for d in data:
                     fmsg = d['fields']['message'][0]
+                    while_list = False
                     if fmsg not in msg_list:
                         msg_list.append(fmsg)
+                        
+                        # check whitelist
+                        for w in spec['whitelist']:
+                            if w in fmsg:
+                                while_list = True
+                                break
+                        
+                        if while_list:
+                            continue
+                        
                         msg = ''
                         file_name = ''
                         
