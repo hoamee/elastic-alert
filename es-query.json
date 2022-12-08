@@ -2361,6 +2361,17 @@
                         }
                       }
                     }
+                  },
+                  {
+                    "bool": {
+                      "must_not": {
+                        "multi_match": {
+                          "type": "phrase",
+                          "query": "KAPE\\kape.exe",
+                          "lenient": true
+                        }
+                      }
+                    }
                   }
                 ]
               }
