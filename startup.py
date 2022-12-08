@@ -74,7 +74,7 @@ async def start_alert():
                         msg_list.append(fmsg)
                         
                         # check whitelist
-                        for w in spec['whitelist']:
+                        for w in spec['white-list']:
                             if w in fmsg:
                                 while_list = True
                                 break
