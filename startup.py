@@ -8,6 +8,7 @@ from telegram_bot import send_error, send_message, send_file
 import time
 from datetime import datetime, timedelta
 import os
+import subprocess
 
 elastic_url = sys.argv[1]  # URL to Elasticsearch
 # elastic_usr = sys.argv[2] # Elasticsearch Username
@@ -30,7 +31,7 @@ def format_time(dt: datetime):
 
 async def start_alert():
     start = time.time()
-    os.system("curl https://raw.githubusercontent.com/hoamee/elastic-alert/main/es-query.json --output es-query.json")
+    subprocess.call("curl https://raw.githubusercontent.com/hoamee/elastic-alert/main/es-query.json --output es-query.json", stdout=open(os.devnull, "w"), stderr=subprocess.STDOUT)
     # Load spec from file
     i = 0
     spec_list = json.load(open('es-query.json', 'r'))
