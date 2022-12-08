@@ -31,7 +31,7 @@ def format_time(dt: datetime):
 
 async def start_alert():
     start = time.time()
-    subprocess.call("curl https://raw.githubusercontent.com/hoamee/elastic-alert/main/es-query.json --output es-query.json", stdout=open(os.devnull, "w"), stderr=subprocess.STDOUT)
+    subprocess.call(["curl", "https://raw.githubusercontent.com/hoamee/elastic-alert/main/es-query.json", "--output", "es-query.json"], stdout=open(os.devnull, "w"), stderr=subprocess.STDOUT)
     # Load spec from file
     i = 0
     spec_list = json.load(open('es-query.json', 'r'))
