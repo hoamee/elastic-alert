@@ -683,10 +683,15 @@
               "bool": {
                 "filter": [
                   {
-                    "multi_match": {
-                      "type": "phrase",
-                      "query": "POST",
-                      "lenient": true
+                    "bool": {
+                      "should": [
+                        {
+                          "match": {
+                            "method": "POST"
+                          }
+                        }
+                      ],
+                      "minimum_should_match": 1
                     }
                   },
                   {
@@ -731,8 +736,8 @@
               "range": {
                 "@timestamp": {
                   "format": "strict_date_optional_time",
-                  "gte": "2022-12-06T08:50:13.875Z",
-                  "lte": "2022-12-06T08:51:00.522Z"
+                  "gte": "2022-12-08T06:07:48.116Z",
+                  "lte": "2022-12-08T07:07:48.116Z"
                 }
               }
             }
