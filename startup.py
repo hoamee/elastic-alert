@@ -38,20 +38,20 @@ async def start_alert():
     time_now_str = format_time(time_now)
     config = json.load(open('config.json', 'r'))
     
+    # init query range
+    last_lte = config['last-lte']
+    # if lte is not set, set it to now. And set gte to now + 1 hour
+    if last_lte == '':
+        gte = format_time(time_now - timedelta(hours=2))
+    # if lte is set, set gte to lte. lte + 1 hour
+    else:
+        gte = last_lte
+    
+    lte = time_now_str
+    
     for spec in spec_list:
         try:
             i += 1
-            # init query range
-            last_lte = config['last-lte']
-            # if lte is not set, set it to now. And set gte to now + 1 hour
-            if last_lte == '':
-                gte = format_time(time_now - timedelta(hours=2))
-            # if lte is set, set gte to lte. lte + 1 hour
-            else:
-                gte = last_lte
-            
-            lte = time_now_str
-
             # put lte and gte to query
             query = spec['query']
             for q in query['query']['bool']['filter']:
@@ -84,14 +84,13 @@ async def start_alert():
                         if(file_name != ''):
                             send_file(file_name)
                             os.remove(file_name)
-                        time.sleep(5)
-            # save lte to config
-            config['last-lte'] = lte
-            with open('config.json', 'w') as f:
-                    json.dump(config, f)
+                        time.sleep(5)            
         except:
             send_error('[So TTTT VP] Error: ' + str(traceback.format_exc()))
-        
+    # save lte to config
+    config['last-lte'] = lte
+    with open('config.json', 'w') as f:
+            json.dump(config, f)    
     end = time.time()
     # return elapsed time
     return f'done in {end-start} seconds. {i} requests sent'
