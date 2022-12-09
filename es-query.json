@@ -404,7 +404,7 @@
     "query-name": "POST Shell",
     "last_gte": "",
     "last-lte": "2022-12-06T08:51:00.522Z",
-    "white-list": [],
+    "white-list": ["183.81.92.178"],
     "query": {
       "track_total_hits": false,
       "sort": [
@@ -1984,7 +1984,7 @@
     "query-name": "Powershell",
     "last_gte": "",
     "last-lte": "2022-12-06T08:51:07.596Z",
-    "white-list": [],
+    "white-list": ["C:\\Users\\administrator.VINHPHUC\\AppData\\Local\\Temp\\__PSScriptPolicyTest_"],
     "query": {
       "track_total_hits": false,
       "sort": [
