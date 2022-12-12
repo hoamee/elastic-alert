@@ -14,7 +14,6 @@ Trigger time: <code>{trg_time} UTC±00:00</code>'''
     return message
 
 def generateRdpMessage(host_ip, computer_name, target_user_name, target_domain_name, target_ip, event_created):
-    msg = resolveMessage(msg)
     message = f'''<b>Phát hiện hành vi RDP</b>
 
 Event time: <code>{event_created}</code>
