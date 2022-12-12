@@ -765,7 +765,7 @@
     "query-name": "POST Shell",
     "last_gte": "",
     "last-lte": "2022-12-06T08:51:00.522Z",
-    "white-list": ["183.81.92.178", "Googlebot", "https://sotc.vinhphuc.gov.vn/Pages/test1.aspx"],
+    "white-list": ["183.81.92.178", "Googlebot", "https://sotc.vinhphuc.gov.vn/Pages/test1.aspx", "/Pages/404.aspx"],
     "query": {
       "track_total_hits": false,
       "sort": [
