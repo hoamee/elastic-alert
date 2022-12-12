@@ -1,6 +1,6 @@
 import requests
 from message_helper import resolveMessage
-# -672756243
+# 607758592
 
 def postMessage(chat_id, message):
     rq = requests.post('https://api.telegram.org/bot5872021231:AAFfvVmobOkbCJG-sv9kCVf4Apa2VoV4nFQ/sendMessage', 
@@ -10,7 +10,7 @@ def postMessage(chat_id, message):
         print(message)
 
 def send_message(message):
-    postMessage('-672756243', message)
+    postMessage('607758592', message)
    
     
 def send_error(message):
@@ -19,7 +19,7 @@ def send_error(message):
 
 def send_file(file_name):
     url = 'https://api.telegram.org/bot5872021231:AAFfvVmobOkbCJG-sv9kCVf4Apa2VoV4nFQ/sendDocument'
-    data={'chat_id': '-672756243', 'parse_mode': 'HTML'}
+    data={'chat_id': '607758592', 'parse_mode': 'HTML'}
     # Need to pass the document field in the files dict
     files = {
         'document': open(file_name, 'rb')

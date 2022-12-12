@@ -85,15 +85,19 @@ async def start_alert():
                         msg = ''
                         file_name = ''
                         
-                        if len(fmsg) >= 3000:
-                            file_name = f"log_{time_now_str}_{str(i)}.txt"
-                            d['fields']['message'][0] = f'Please check attachment bellow for full message ({file_name})'
-                            with open(file_name, 'w') as f:
-                                f.write(fmsg)                            
-                            
+                        
+                        if spec['query-type'] != 'rdp':
+                            if len(fmsg) >= 3000:
+                                file_name = f"log_{time_now_str}_{str(i)}.txt"
+                                d['fields']['message'][0] = f'Please check attachment bellow for full message ({file_name})'
+                                with open(file_name, 'w') as f:
+                                    f.write(fmsg)
+                        
                         msg = generateMessage(d, spec['query-name'], spec['query-type'])
+                            
                         send_message(msg)
                         if(file_name != ''):
+                            time.sleep(1)
                             send_file(file_name)
                             os.remove(file_name)
                         time.sleep(5)            

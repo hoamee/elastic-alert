@@ -1,6 +1,6 @@
 [
   {
-    "query-type": "anm",
+    "query-type": "rdp",
     "query-name": "RDP",
     "last_gte": "",
     "last-lte": "2022-12-06T08:50:57.988Z",

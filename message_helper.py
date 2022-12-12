@@ -13,9 +13,26 @@ Trigger time: <code>{trg_time} UTC±00:00</code>'''
     
     return message
 
+def generateRdpMessage(host_ip, computer_name, target_user_name, target_domain_name, target_ip, event_created):
+    msg = resolveMessage(msg)
+    message = f'''<b>Phát hiện hành vi RDP</b>
+
+Event time: <code>{event_created}</code>
+
+Dest IP: <code>{host_ip}</code>
+Dest Name: <code>{computer_name}</code>
+
+Domain: <code>{target_domain_name}</code>
+User: <code>{target_user_name}</code>
+
+Source IP: <code>{target_ip}</code>
+'''
+    
+    return message
+
 def generateANMMessage(ip, host_name, host_os, image, target_file, user, msg, trg_time, atk_type):
     msg = resolveMessage(msg)
-    message = f'''<b>Phát hiện tiến trình {atk_type} với tham số nghi ngờ</b>
+    message = f'''<b>Phát hiện hành vi {atk_type}</b>
 
 Host ip: <code>{ip}</code>
 Host name : <code>{host_name}</code>
@@ -85,7 +102,46 @@ def generateMessage(log, atk_type, alert_type):
             pass
         
         rmsg = generateANMMessage(ip, host_name, host_os, image, target_file, user, msg, trg_time, atk_type)
+    
+    if alert_type == 'rdp':
+        host_ip = '-/-'
+        computer_name = '-/-'
+        target_user_name = '-/-'
+        target_domain_name = '-/-'
+        target_ip = '-/-'
+        event_created = '-/-'
         
+        try:
+            host_ip = log['fields']['host.ip'][0]
+        except:
+            pass
+        
+        try:
+            computer_name = log['fields']['winlog.computer_name'][0]
+        except:
+            pass
+        
+        try:
+            target_user_name = log['fields']['winlog.event_data.TargetUserName'][0]
+        except:
+            pass
+        
+        try:
+            target_domain_name = log['fields']['winlog.event_data.TargetDomainName'][0]
+        except:
+            pass
+        
+        try:
+            target_ip = log['fields']['winlog.event_data.IpAddress'][0]
+        except:
+            pass
+        
+        try:
+            event_created = log['fields']['event.created'][0]
+        except:
+            pass
+        
+        rmsg = generateRdpMessage(host_ip, computer_name, target_user_name, target_domain_name, target_ip, event_created)
     return rmsg
 
 
