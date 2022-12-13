@@ -13,6 +13,7 @@ import subprocess
 elastic_url = sys.argv[1]  # URL to Elasticsearch
 # elastic_usr = sys.argv[2] # Elasticsearch Username
 # elastic_pwd = sys.argv[3] # Elasticsearch Password
+telegram_token = sys.argv[2]  # Telegram Bot Token
 
 # Initialize Elasticsearch
 es = AsyncElasticsearch(
@@ -95,14 +96,14 @@ async def start_alert():
                         
                         msg = generateMessage(d, spec['query-name'], spec['query-type'])
                             
-                        send_message(msg)
+                        send_message(msg, telegram_token)
                         if(file_name != ''):
                             time.sleep(1)
-                            send_file(file_name)
+                            send_file(file_name, telegram_token)
                             os.remove(file_name)
                         time.sleep(5)            
         except:
-            send_error('[So TTTT VP] Error: ' + str(traceback.format_exc()))
+            send_error('[So TTTT VP] Error: ' + str(traceback.format_exc()), telegram_token)
     # save lte to config
     config['last-lte'] = lte
     with open('config.json', 'w') as f:

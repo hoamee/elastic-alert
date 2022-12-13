@@ -2,23 +2,23 @@ import requests
 from message_helper import resolveMessage
 # -672756243
 
-def postMessage(chat_id, message):
-    rq = requests.post('https://api.telegram.org/bot5872021231:AAFfvVmobOkbCJG-sv9kCVf4Apa2VoV4nFQ/sendMessage', 
+def postMessage(chat_id, message, token):
+    rq = requests.post(f'https://api.telegram.org/bot{token}/sendMessage', 
                   data={'chat_id': chat_id, 'text': message, 'parse_mode': 'HTML'})
     if(rq.status_code != 200):
         send_error(rq.text)
         print(message)
 
-def send_message(message):
-    postMessage('-672756243', message)
+def send_message(message, token):
+    postMessage('-672756243', message, token)
    
     
-def send_error(message):
+def send_error(message, token):
     resolveMessage(message)
-    postMessage('607758592', message)
+    postMessage('607758592', message, token)
 
-def send_file(file_name):
-    url = 'https://api.telegram.org/bot5872021231:AAFfvVmobOkbCJG-sv9kCVf4Apa2VoV4nFQ/sendDocument'
+def send_file(file_name, token):
+    url = f'https://api.telegram.org/bot{token}/sendDocument'
     data={'chat_id': '-672756243', 'parse_mode': 'HTML'}
     # Need to pass the document field in the files dict
     files = {
