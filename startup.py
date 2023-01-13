@@ -94,7 +94,7 @@ async def start_alert():
                                 with open(file_name, 'w') as f:
                                     f.write(fmsg)
                         
-                        msg = generateMessage(d, spec['query-name'], spec['query-type'])
+                        msg = generateMessage(d, spec)
                             
                         send_message(msg, telegram_token)
                         if(file_name != ''):

@@ -46,8 +46,30 @@ Trigger time: <code>{trg_time} UTC±00:00</code>'''
     
     return message
 
-def generateMessage(log, atk_type, alert_type):
+def generateDefaultMessage(log, spec):
+    format = spec["display-fields"]
+    message = f'''<b>{format['title']}</b>
+
+'''
+    for f in format['fields']:        
+        key = f['key']
+        value = ""
+        if key == 'divider':
+            message += f'''{value}
+'''
+        else:            
+            try:
+                value = log['fields'][key][0]
+            except:
+                value = ""       
+            message += f'''{key}: <code>{value}</code>
+'''
+    return message
+
+def generateMessage(log, spec):
     rmsg = ''
+    atk_type = spec['query-name'], 
+    alert_type = spec['query-type']
     if alert_type == 'web-attack':
         msg = log['fields']['message'][0]
         msg_arr = msg.split(' ')
@@ -141,6 +163,10 @@ def generateMessage(log, atk_type, alert_type):
             pass
         
         rmsg = generateRdpMessage(host_ip, computer_name, target_user_name, target_domain_name, target_ip, event_created)
+    
+    if alert_type == 'default':
+        rmsg = generateDefaultMessage(log, spec)
+        
     return rmsg
 
 
