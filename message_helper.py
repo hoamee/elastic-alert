@@ -51,15 +51,15 @@ def generateDefaultMessage(log, spec):
     message = f'''<b>{format['title']}</b>
 
 '''
-    for f in format['fields']:        
-        key = f['key']
+    for fo in format['fields']:        
+        key = fo['key']
         value = ""
         if key == 'divider':
-            message += f'''{value}
+            message += f'''{fo['value']}
 '''
         else:            
             try:
-                value = log['fields'][key][0]
+                value = log['fields'][fo['value']][0]
             except:
                 value = ""       
             message += f'''{key}: <code>{value}</code>
