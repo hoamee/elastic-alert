@@ -10,7 +10,7 @@ def postMessage(chat_id, message, token):
         print(message)
 
 def send_message(message, token):
-    postMessage('607758592', message, token)
+    postMessage('-672756243', message, token)
    
     
 def send_error(message, token):
@@ -19,7 +19,7 @@ def send_error(message, token):
 
 def send_file(file_name, token):
     url = f'https://api.telegram.org/bot{token}/sendDocument'
-    data={'chat_id': '607758592', 'parse_mode': 'HTML'}
+    data={'chat_id': '-672756243', 'parse_mode': 'HTML'}
     # Need to pass the document field in the files dict
     files = {
         'document': open(file_name, 'rb')
