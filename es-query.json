@@ -34,6 +34,10 @@
         {
           "key": "Host IP",
           "value": "host.ip"
+        },
+        {
+          "key": "Event time",
+          "value": "event.created"
         }
       ]
     },
