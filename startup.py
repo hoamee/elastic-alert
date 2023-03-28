@@ -115,8 +115,12 @@ async def start_alert():
 
 async def startup():
     while True:
-        elapsed_time = await start_alert()
-        print(elapsed_time)
-        time.sleep(20)
+        try:
+            while True:
+                elapsed_time = await start_alert()
+                print(elapsed_time)
+                time.sleep(20)
+        except:
+            time.sleep(300)
 
 asyncio.run(startup())
