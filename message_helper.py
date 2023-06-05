@@ -1,3 +1,5 @@
+import datetime
+
 def resolveMessage(msg):
     return msg.replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;')
 
@@ -9,7 +11,7 @@ Host IP: <code>{ip}</code>
 
 Log detail: <code>{msg}</code>
 
-Trigger time: <code>{trg_time} UTC±00:00</code>'''
+Trigger time: <code>{trg_time}</code>'''
     
     return message
 
@@ -42,7 +44,7 @@ Image : <code>{image}</code>
 Target file name: <code>{target_file}</code>
 
 Log detail: <code>{msg}</code>
-Trigger time: <code>{trg_time} UTC±00:00</code>'''
+Trigger time: <code>{trg_time}</code>'''
     
     return message
 
@@ -66,6 +68,11 @@ def generateDefaultMessage(log, spec):
 '''
     return message
 
+def refactor_time(trg_time):
+    tmp_time = datetime.datetime.strptime(trg_time, '%Y-%m-%dT%H:%M:%S.%fZ')
+    tmp_time = tmp_time + datetime.timedelta(hours=7)
+    return datetime.datetime.strftime(tmp_time, '%Y-%m-%d %H:%M:%S')
+
 def generateMessage(log, spec):
     rmsg = ''
     atk_type = spec['query-name'], 
@@ -75,6 +82,10 @@ def generateMessage(log, spec):
         msg_arr = msg.split(' ')
         trg_time = msg_arr[0] + ' ' + msg_arr[1]
         ip = msg_arr[2]
+        try:
+            trg_time = refactor_time(trg_time)
+        except:
+            trg_time = '-/-'
         rmsg = generateIISMessage(ip, msg, trg_time, atk_type)
         
     if alert_type == 'anm':
@@ -87,10 +98,18 @@ def generateMessage(log, spec):
         target_file = '-/-'
         user = '-/-'
         
-        try:
-            trg_time = log['fields']['winlog.event_data.UtcTime'][0]          
-        except:
-            pass
+        if atk_type == 'Ingress Tool Transfer' or atk_type == 'Powershell':
+            try:
+                trg_time = log['fields']['event.created'][0]
+                trg_time = refactor_time(trg_time)
+            except:
+                pass
+        else:
+            try:
+                trg_time = log['fields']['winlog.event_data.UtcTime'][0]
+                trg_time = refactor_time(trg_time)
+            except:
+                pass
         
         try:
             user = log['fields']['winlog.event_data.User'][0]
@@ -159,6 +178,7 @@ def generateMessage(log, spec):
         
         try:
             event_created = log['fields']['event.created'][0]
+            event_created = refactor_time(event_created)
         except:
             pass
         

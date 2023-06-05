@@ -6,7 +6,7 @@ def postMessage(chat_id, message, token):
     rq = requests.post(f'https://api.telegram.org/bot{token}/sendMessage', 
                   data={'chat_id': chat_id, 'text': message, 'parse_mode': 'HTML'})
     if(rq.status_code != 200):
-        send_error(rq.text)
+        send_error(rq.text) # type: ignore
         print(message)
 
 def send_message(message, token):
